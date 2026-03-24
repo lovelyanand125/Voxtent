@@ -39,7 +39,7 @@ export default function Home() {
   className="h-screen flex items-center bg-cover bg-center px-10"
   style={{
     backgroundImage:
-      "linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.2)), url('/images/Sample5.jpg')",
+      "linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.2)), url('/Image/Sample5.jpg')",
   }}
 >
   <div className="max-w-2xl">
@@ -176,17 +176,17 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-6">
           <div className="border border-gray-800 p-4 rounded-lg">
-            <img src="/images/Sample1.jpg" className="rounded mb-3" />
+            <img src="/Image/Sample1.jpg" className="rounded mb-3" />
             <h3>Startup Podcast</h3>
           </div>
 
           <div className="border border-gray-800 p-4 rounded-lg">
-            <img src="/images/Sample2.jpg" className="rounded mb-3" />
+            <img src="/Image/Sample2.jpg" className="rounded mb-3" />
             <h3>Business Series</h3>
           </div>
 
           <div className="border border-gray-800 p-4 rounded-lg">
-            <img src="/images/Sample3.jpg" className="rounded mb-3" />
+            <img src="/Image/Sample3.jpg" className="rounded mb-3" />
             <h3>Marketing Content</h3>
           </div>
         </div>
@@ -199,7 +199,7 @@ export default function Home() {
   <div className="grid md:grid-cols-2 gap-8">
 
     <div className="border border-gray-800 rounded-xl overflow-hidden">
-      <img src="/images/sample2.jpg" />
+      <img src="/Image/sample2.jpg" />
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">
           How to Build a Podcast Brand
@@ -215,7 +215,7 @@ export default function Home() {
     </div>
 
     <div className="border border-gray-800 rounded-xl overflow-hidden">
-      <img src="/images/sample3.jpg" />
+      <img src="/Image/sample3.jpg" />
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">
           Video Content for Growth
