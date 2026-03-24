@@ -199,7 +199,7 @@ export default function Home() {
   <div className="grid md:grid-cols-2 gap-8">
 
     <div className="border border-gray-800 rounded-xl overflow-hidden">
-      <img src="/Image/sample2.jpg" />
+      <img src="/Image/Sample2.jpg" />
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">
           How to Build a Podcast Brand
@@ -215,7 +215,7 @@ export default function Home() {
     </div>
 
     <div className="border border-gray-800 rounded-xl overflow-hidden">
-      <img src="/Image/sample3.jpg" />
+      <img src="/Image/Sample3.jpg" />
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">
           Video Content for Growth
