@@ -39,7 +39,7 @@ export default function Home() {
   className="h-screen flex items-center bg-cover bg-center px-10"
   style={{
     backgroundImage:
-      "linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.2)), url('/images/sample5.jpg')",
+      "linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.2)), url('/images/Sample5.jpg')",
   }}
 >
   <div className="max-w-2xl">
