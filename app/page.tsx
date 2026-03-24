@@ -1,129 +1,175 @@
 "use client";
 
 export default function Home() {
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+  
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      message: e.target.message.value,
+    };
+  
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(formData),
+    });
+  
+    if (res.ok) {
+      alert("Message sent!");
+    } else {
+      alert("Something went wrong");
+    }
+  };
   return (
     <main className="bg-black text-white">
 
-      {/* NAVBAR */}
+      {/* Dashboard */}
       <nav className="flex justify-between items-center px-8 py-6 border-b border-gray-800">
         <h1 className="text-xl font-bold">Voxtent</h1>
         <div className="flex gap-6 text-sm">
-          <a href="#">Services</a>
-          <a href="#">Work</a>
-          <a href="#">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
         </div>
       </nav>
 
-      {/* HERO */}
-      <section className="text-center py-32 px-6">
-        <h1 className="text-5xl font-bold mb-6">
-          Build Podcasts, Videos & Content with Kanishk Indrarun
-        </h1>
-        <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-        Voxtent helps creators, startups, and businesses turn ideas into powerful podcasts,
-        videos, and digital content — from concept to distribution.
-        </p>
-        <button className="bg-white text-black px-6 py-3 rounded-lg">
-          Start Now
-        </button>
-      </section>
-      <section className="px-10 py-20 grid md:grid-cols-2 gap-10 items-center">
-  
-  <img
-    src="/images/sample1.jpg"
-    className="rounded-xl"
-  />
+      {/* Main function */}
+      <section
+  className="h-screen flex items-center bg-cover bg-center px-10"
+  style={{
+    backgroundImage:
+      "linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.2)), url('/images/sample5.jpg')",
+  }}
+>
+  <div className="max-w-2xl">
 
-  <div>
-    <h2 className="text-3xl font-bold mb-4">
-      Why Choose Voxtent?
-    </h2>
+    <h1 className="text-5xl md:text-6xl font-bold mb-6">
+      Build Podcasts, Videos & Content with Voxtent
+    </h1>
 
-    <p className="text-gray-400 mb-6">
-      We help brands and creators turn ideas into powerful digital content.
-      From podcasts to videos and written content — everything is handled
-      end-to-end with speed and quality.
+    <p className="text-gray-300 mb-6">
+      Transform your ideas into powerful podcasts, engaging videos,
+      and high-quality content — all in one place.
     </p>
 
-    <button className="bg-white text-black px-5 py-2 rounded">
-      Learn More
-    </button>
+    <div className="flex gap-4">
+      <button className="bg-white text-black px-6 py-3 rounded-lg">
+        Get Started
+      </button>
+
+      <button className="border border-white px-6 py-3 rounded-lg">
+        View Work
+      </button>
+    </div>
+
   </div>
-
 </section>
-      {/* SERVICES */}
-      <section className="px-10 py-20 grid md:grid-cols-3 gap-8">
-        <div className="border border-gray-800 p-6 rounded-xl">
-          <h3 className="text-xl font-semibold mb-3">Podcast Production</h3>
-          <p className="text-gray-400">
-          From idea to launch — we create professional podcasts, interviews, voiceovers,
-          and storytelling content that engages your audience.
-          </p>
-        </div>
+<section id="services" className="px-6 md:px-16 py-24 bg-gray-100 text-black">
 
-        <div className="border border-gray-800 p-6 rounded-xl">
-          <h3 className="text-xl font-semibold mb-3">Video Content</h3>
-          <p className="text-gray-400">
-          High-quality videos, reels, and visual content designed for social media,
-          marketing, and brand storytelling.
-          </p>
-        </div>
-
-        <div className="border border-gray-800 p-6 rounded-xl">
-          <h3 className="text-xl font-semibold mb-3">Content Generation</h3>
-          <p className="text-gray-400">
-          Blogs, scripts, newsletters, and marketing content tailored to your brand voice
-          and audience.
-          </p>
-        </div>
-      </section>
-      <section className="px-10 py-20 text-center">
-  <h2 className="text-3xl font-bold mb-10">How Voxtent Works</h2>
+<h2 className="text-3xl font-bold text-center mb-4">
+  Our Services
+</h2>
+<p className="text-center text-gray-500 mb-12">
+  Everything you need to build, grow, and scale your content.
+</p>
 
   <div className="grid md:grid-cols-3 gap-8">
-    <div>
-      <h3 className="font-semibold text-lg mb-2">Idea</h3>
-      <p className="text-gray-400">
-        Share your idea or business goal.
+
+    {/* CARD 1 */}
+    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+
+      <div className="flex items-center gap-3 mb-4">
+        <div className="bg-blue-500 text-white p-3 rounded-full">
+          🎧
+        </div>
+        <h3 className="text-lg font-semibold">Podcast Production</h3>
+      </div>
+
+      <p className="text-gray-600 mb-6 text-sm">
+        We create engaging podcasts, interviews, and storytelling content
+        that builds strong audience connections.
       </p>
+
+      <div className="flex justify-end">
+        <button className="border border-blue-500 text-blue-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition">
+          →
+        </button>
+      </div>
+
     </div>
 
-    <div>
-      <h3 className="font-semibold text-lg mb-2">Creation</h3>
-      <p className="text-gray-400">
-        We produce podcasts, videos, and content tailored to your needs.
+    {/* CARD 2 */}
+    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+
+      <div className="flex items-center gap-3 mb-4">
+        <div className="bg-purple-500 text-white p-3 rounded-full">
+          🎬
+        </div>
+        <h3 className="text-lg font-semibold">Video Content</h3>
+      </div>
+
+      <p className="text-gray-600 mb-6 text-sm">
+        From reels to full productions, we create high-quality visual
+        content for marketing and storytelling.
       </p>
+
+      <div className="flex justify-end">
+        <button className="border border-purple-500 text-purple-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-purple-500 hover:text-white transition">
+          →
+        </button>
+      </div>
+
     </div>
 
-    <div>
-      <h3 className="font-semibold text-lg mb-2"> Scale</h3>
-      <p className="text-gray-400">
-        Distribute and grow your audience with high-quality content.
+    {/* CARD 3 */}
+    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+
+      <div className="flex items-center gap-3 mb-4">
+        <div className="bg-green-500 text-white p-3 rounded-full">
+          ✍️
+        </div>
+        <h3 className="text-lg font-semibold">Content Creation</h3>
+      </div>
+
+      <p className="text-gray-600 mb-6 text-sm">
+        Blogs, scripts, and marketing content tailored to your brand
+        voice and audience.
       </p>
+
+      <div className="flex justify-end">
+        <button className="border border-green-500 text-green-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-green-500 hover:text-white transition">
+          →
+        </button>
+      </div>
+
     </div>
+
   </div>
 </section>
 
-      {/* STATS (like Timbre credibility) */}
-      <section className="bg-gray-900 py-16 text-center">
-        <div className="grid md:grid-cols-3 gap-8">
-          <div>
-            <h2 className="text-3xl font-bold">100+</h2>
-            <p className="text-gray-400">Podcasts Created</p>
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold">50+</h2>
-            <p className="text-gray-400">Clients Served</p>
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold">1M+</h2>
-            <p className="text-gray-400">Content Views</p>
-          </div>
-        </div>
-      </section>
+{/* STATS
+<section className="bg-gray-900 py-16 text-center">
+  <div className="grid md:grid-cols-3 gap-8">
+    <div>
+      <h2 className="text-3xl font-bold">100+</h2>
+      <p className="text-gray-400">Podcasts Created</p>
+    </div>
+    <div>
+      <h2 className="text-3xl font-bold">50+</h2>
+      <p className="text-gray-400">Clients Served</p>
+    </div>
+    <div>
+      <h2 className="text-3xl font-bold">1M+</h2>
+      <p className="text-gray-400">Content Views</p>
+    </div>
+  </div>
+</section>
+*/}
+
 
       {/* PORTFOLIO */}
-      <section className="px-10 py-20">
+      <section className="px-6 md:px-16 py-24">
         <h2 className="text-3xl font-bold mb-10 text-center">
           Our Work
         </h2>
@@ -145,7 +191,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="px-10 py-20">
+      <section id="work" className="px-10 py-20">
   <h2 className="text-3xl font-bold text-center mb-10">
     Latest Updates
   </h2>
@@ -186,46 +232,140 @@ export default function Home() {
 
   </div>
 </section>
-      {/* CONTACT */}
-      <section className="px-6 py-20 bg-gray-900">
-        <h2 className="text-3xl font-bold text-center mb-10">
-          Let’s Work Together
-        </h2>
+<section id="contact" className="px-6 md:px-16 py-24 bg-gray-900 text-white">
 
-        <form
-          className="max-w-xl mx-auto flex flex-col gap-4"
-          onSubmit={async (e) => {
-            e.preventDefault();
-            const formData = new FormData(e.currentTarget);
+<div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 
-            const data = {
-              name: formData.get("name"),
-              email: formData.get("email"),
-              message: formData.get("message"),
-            };
+  {/* LEFT SIDE */}
+  <div>
+    <h2 className="text-4xl font-bold mb-4">
+      Let’s Work Together 🚀
+    </h2>
 
-            await fetch("/api/contact", {
-              method: "POST",
-              body: JSON.stringify(data),
-            });
+    <p className="text-gray-400 mb-6">
+      Have an idea for a podcast, video, or content project?  
+      Tell us about it and we’ll help you bring it to life.
+    </p>
 
-            alert("Message sent!");
-          }}
-        >
-          <input name="name" placeholder="Name" className="p-3 bg-black border border-gray-700 rounded" />
-          <input name="email" placeholder="Email" className="p-3 bg-black border border-gray-700 rounded" />
-          <textarea name="message" placeholder="Message" className="p-3 bg-black border border-gray-700 rounded" />
+    <div className="space-y-3 text-gray-300">
+      <p>📍 Bangalore, India</p>
+      <p>📧 contact@voxtent.in</p>
+      <p>📞 +91 9663799617</p>
+    </div>
+  </div>
 
-          <button className="bg-white text-black py-3 rounded">
-            Submit
-          </button>
-        </form>
-      </section>
+  {/* RIGHT SIDE FORM */}
+  <form
+    onSubmit={handleSubmit}
+    className="bg-black p-6 rounded-xl flex flex-col gap-4"
+  >
+
+    <input
+      name="name"
+      type="text"
+      placeholder="Your Name"
+      required
+      className="p-3 bg-gray-900 border border-gray-700 rounded focus:border-white outline-none"
+    />
+
+    <input
+      name="email"
+      type="email"
+      placeholder="Your Email"
+      required
+      className="p-3 bg-gray-900 border border-gray-700 rounded focus:border-white outline-none"
+    />
+
+    <textarea
+      name="message"
+      placeholder="Tell us about your project..."
+      rows={4}
+      required
+      className="p-3 bg-gray-900 border border-gray-700 rounded focus:border-white outline-none"
+    />
+
+    <button
+      type="submit"
+      className="bg-white text-black py-3 rounded-lg font-semibold hover:scale-105 transition"
+    >
+      Send Message
+    </button>
+
+  </form>
+
+</div>
+</section>
 
       {/* FOOTER */}
-      <footer className="text-center py-6 border-t border-gray-800 text-gray-500">
-        © 2026 Voxtent. All rights reserved.
-      </footer>
+      <footer className="bg-blue-950 text-white px-6 md:px-16 py-16">
+
+<div className="grid md:grid-cols-4 gap-10">
+
+  {/* LOGO + ABOUT */}
+  <div>
+    <h2 className="text-xl font-bold mb-4">Voxtent</h2>
+    <p className="text-sm text-gray-300 mb-4">
+      We help brands create podcasts, videos, and content that engage
+      and grow their audience.
+    </p>
+
+    <p className="mb-3">Stay in touch</p>
+
+    <div className="flex gap-3">
+      <div className="bg-blue-500 w-10 h-10 flex items-center justify-center rounded-full">F</div>
+      <div className="bg-blue-400 w-10 h-10 flex items-center justify-center rounded-full">X</div>
+      <div className="bg-blue-600 w-10 h-10 flex items-center justify-center rounded-full">in</div>
+    </div>
+  </div>
+
+  {/* SERVICES */}
+  <div>
+    <h3 className="font-semibold mb-4">Services</h3>
+    <ul className="space-y-2 text-gray-300 text-sm">
+      <li>Podcast Production</li>
+      <li>Video Content</li>
+      <li>Content Writing</li>
+      <li>Marketing</li>
+    </ul>
+  </div>
+
+  {/* COMPANY */}
+  <div>
+    <h3 className="font-semibold mb-4">Company</h3>
+    <ul className="space-y-2 text-gray-300 text-sm">
+      <li>About Us</li>
+      <li>Careers</li>
+      <li>Blogs</li>
+      <li>Contact</li>
+    </ul>
+  </div>
+
+  {/* NEWSLETTER */}
+  <div>
+    <h3 className="font-semibold mb-4">Subscribe</h3>
+
+    <div className="flex">
+      <input
+        placeholder="Email Address"
+        className="px-4 py-2 rounded-l bg-blue-900 border border-blue-700 w-full"
+      />
+      <button className="bg-blue-500 px-4 py-2 rounded-r">
+        Subscribe
+      </button>
+    </div>
+
+    <p className="text-sm text-gray-400 mt-4">
+      Bangalore, India
+    </p>
+  </div>
+
+</div>
+
+<div className="border-t border-blue-800 mt-10 pt-6 text-center text-gray-400 text-sm">
+  © 2026 Voxtent. All rights reserved.
+</div>
+
+</footer>
 
     </main>
   );
