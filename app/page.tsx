@@ -1,55 +1,65 @@
 export default function Home() {
   return (
-    <main className="font-sans">
+    <main className="font-sans bg-[#FAF6F0]">
 
-      {/*  HEADER (Sticky) */}
-      <header className="sticky top-0 z-50 bg-[#FAF6F0] border-b border-gray-200">
-        <div className="flex justify-between items-center px-6 md:px-16 py-4">
-          <h1 className="text-red-600 font-bold text-xl tracking-widest">
+      {/* HEADER */}
+      <header className="sticky top-0 z-50 bg-[#FAF6F0] border-b border-red-200">
+
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+          {/* LOGO */}
+          <div className="text-red-600 font-bold tracking-[0.2em] text-lg">
             VOXTENT
-          </h1>
+          </div>
 
-          <nav className="hidden md:flex gap-8 text-gray-700">
-            <a href="#" className="hover:text-black">What We Do</a>
-            <a href="#" className="hover:text-black">Our Work</a>
-            <a href="#" className="hover:text-black">About</a>
+          {/* NAV */}
+          <nav className="hidden md:flex gap-10 text-gray-700 text-sm font-medium">
+            <a href="#" className="hover:text-black transition">Home</a>
+            <a href="#" className="hover:text-black transition">Podcast</a>
+            <a href="#" className="hover:text-black transition">Services</a>
+            <a href="#" className="hover:text-black transition">Insights</a>
+            <a href="#" className="hover:text-black transition">Contact Us</a>
           </nav>
 
-          <button className="bg-red-600 text-white px-5 py-2 rounded-md font-semibold hover:bg-red-700 transition">
+          {/* CTA */}
+          <button className="bg-red-600 text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-red-700 transition">
             Let’s Talk
           </button>
+
         </div>
+
       </header>
 
-      {/*  S1 HERO */}
-      <section className="bg-[#1C1C1C] text-white py-28 px-6 md:px-16">
-        <p className="text-red-500 uppercase tracking-widest text-sm mb-4">
-          Podcast-led growth for businesses, brands, and leaders.
+      {/* HERO */}
+      <section className="bg-[#F5EFE6] text-black py-28 px-6 md:px-16 relative">
+
+        <p className="text-red-600 uppercase tracking-widest text-sm mb-4">
+          A podcast and content studio.
         </p>
 
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight max-w-4xl">
-          The most powerful voices <br />
+        <h1 className="text-4xl md:text-6xl font-serif font-bold leading-tight max-w-4xl">
+          Your podcast is the most powerful <br />
           <span className="text-red-600">
-            in any room started somewhere.
+            business tool you're not using yet.
           </span>
         </h1>
 
-        <p className="text-gray-400 mt-6 max-w-2xl">
-          We build content engines that turn what you know into authority and what you create into real business growth.
+        <p className="text-gray-600 mt-6 max-w-2xl">
+          Your voice. Your audience. Your business.
         </p>
 
-        <div className="mt-8 flex gap-4">
-          <button className="bg-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition">
+        <div className="mt-8">
+          <button className="text-red-600 font-semibold border-b border-red-600 pb-1 hover:opacity-70 transition">
             Start the conversation →
           </button>
+        </div>
 
-          <button className="border border-gray-500 px-6 py-3 rounded-lg hover:bg-white hover:text-black transition">
-            See our work ↓
-          </button>
+        <div className="absolute right-10 top-20 text-[140px] text-red-100 font-bold opacity-30 hidden md:block">
+          V
         </div>
       </section>
 
-      {/*  S2 TENSION BAND */}
+      {/* S2 */}
       <section className="bg-red-600 text-white py-16 px-6 md:px-16">
         <h2 className="text-2xl md:text-3xl font-bold max-w-4xl">
           Every business has a point of view worth hearing. <br />
@@ -61,56 +71,43 @@ export default function Home() {
         </p>
       </section>
 
-      {/*  S3 WHO THIS IS FOR */}
+      {/* S3 */}
       <section className="bg-[#FAF6F0] py-20 px-6 md:px-16">
         <h2 className="text-2xl font-bold mb-10">
           Built for anyone with something worth saying.
         </h2>
 
         <div className="grid md:grid-cols-4 gap-6">
-
           {[
-            {
-              title: "Scaling a business",
-              desc: "You need the market to see you as the authority — not just another option.",
-            },
-            {
-              title: "Founder or CXO",
-              desc: "Your thinking deserves a wider room. We build the platform that puts you there.",
-            },
-            {
-              title: "Running a brand",
-              desc: "Content keeps getting made and forgotten. You need an engine that builds over time.",
-            },
-            {
-              title: "Building something new",
-              desc: "Startup or new vertical — you need presence before you have proof.",
-            },
-          ].map((item, i) => (
+            "Scaling a business",
+            "Founder or CXO",
+            "Running a brand",
+            "Building something new",
+          ].map((title, i) => (
             <div key={i} className="bg-white p-6 rounded-xl border hover:shadow-lg transition">
-              <h3 className="font-semibold mb-2">{item.title}</h3>
-              <p className="text-sm text-gray-600">{item.desc}</p>
+              <h3 className="font-semibold mb-2">{title}</h3>
+              <p className="text-sm text-gray-600">
+                You need authority, not noise. We help you build that.
+              </p>
               <p className="text-red-600 mt-4 font-semibold cursor-pointer">
                 That’s me →
               </p>
             </div>
           ))}
-
         </div>
       </section>
 
-      {/* S4 PILLARS */}
+      {/* S4 */}
       <section className="bg-white py-20 px-6 md:px-16">
         <h2 className="text-3xl font-bold mb-4">
           One engine. Five ways it works for you.
         </h2>
 
         <p className="text-gray-500 mb-10">
-          Podcast is the core. Everything around it is built to amplify, distribute, and convert.
+          Podcast is the core. Everything around it amplifies, distributes, and converts.
         </p>
 
         <div className="grid md:grid-cols-5 gap-6">
-
           {[
             "Podcast solutions",
             "Content development",
@@ -122,19 +119,19 @@ export default function Home() {
               <div className={`w-6 h-6 mb-3 rounded ${i % 2 === 0 ? "bg-red-600" : "bg-black"}`} />
               <h3 className="font-semibold">{title}</h3>
               <p className="text-sm text-gray-600 mt-2">
-                Built to drive real outcomes, not vanity metrics.
+                Built for real outcomes, not vanity metrics.
               </p>
               <p className="text-red-600 mt-3 text-sm font-semibold cursor-pointer">
                 How we do it →
               </p>
             </div>
           ))}
-
         </div>
       </section>
 
-      {/*  S5 CATEGORY CREATOR */}
-      <section className="bg-[#1C1C1C] text-white py-24 px-6 md:px-16">
+      {/* S5 LIGHT */}
+      <section className="bg-[#FAF6F0] py-24 px-6 md:px-16">
+
         <h2 className="text-3xl md:text-5xl font-bold max-w-4xl leading-tight">
           The businesses that own their sector tomorrow <br />
           <span className="text-red-600">
@@ -142,11 +139,11 @@ export default function Home() {
           </span>
         </h2>
 
-        <p className="text-gray-400 mt-6 max-w-3xl">
+        <p className="text-gray-600 mt-6 max-w-3xl">
           We exist at the intersection of content, technology, and business growth.
         </p>
 
-        <ul className="mt-8 space-y-3 text-gray-300">
+        <ul className="mt-8 space-y-3 text-gray-700">
           <li>→ We start with your business problem.</li>
           <li>→ We build for your sector.</li>
           <li>→ We connect content to outcomes.</li>
@@ -155,30 +152,10 @@ export default function Home() {
         <button className="mt-8 border border-red-600 text-red-600 px-6 py-3 rounded-lg hover:bg-red-600 hover:text-white transition">
           See how we think →
         </button>
+
       </section>
 
-      {/*  S6 DIFFERENCE */}
-      <section className="bg-[#FAF6F0] py-20 px-6 md:px-16">
-        <h2 className="text-3xl font-bold mb-10">
-          Why the people who work with us stop looking.
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-6">
-
-          {[
-            "We think in pipelines, not episodes.",
-            "We know this market from experience.",
-            "We stay until it works.",
-          ].map((text, i) => (
-            <div key={i} className="bg-white p-6 rounded-xl border-l-4 border-red-600">
-              <p className="font-semibold">{text}</p>
-            </div>
-          ))}
-
-        </div>
-      </section>
-
-      {/*  S7 FINAL CTA */}
+      {/* FINAL CTA */}
       <section className="bg-red-600 text-white py-24 px-6 md:px-16">
         <h2 className="text-3xl md:text-5xl font-bold max-w-3xl">
           Your voice is your most underused business asset.
@@ -191,89 +168,60 @@ export default function Home() {
         <button className="mt-8 bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
           Start the conversation →
         </button>
-
-        <p className="mt-4 text-sm text-white/80">
-          No pitch decks. No long proposals. Just a real conversation.
-        </p>
       </section>
+
+      {/* FOOTER */}
       <footer className="bg-[#0B1A2B] text-gray-300 py-16 px-6 md:px-16">
 
-<div className="grid md:grid-cols-4 gap-10">
+        <div className="grid md:grid-cols-4 gap-10">
 
-  {/* 🔴 BRAND */}
-  <div>
-    <h2 className="text-white font-bold text-xl mb-4 tracking-wide">
-      VOXTENT
-    </h2>
+          <div>
+            <h2 className="text-white font-bold text-xl mb-4 tracking-wide">
+              VOXTENT
+            </h2>
+            <p className="text-sm text-gray-400">
+              Building content engines that turn ideas into authority.
+            </p>
+          </div>
 
-    <p className="text-sm text-gray-400">
-      Building content engines that turn ideas into authority and authority into revenue.
-    </p>
+          <div>
+            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
+              <li>About</li>
+              <li>Services</li>
+              <li>Insights</li>
+              <li>Contact</li>
+            </ul>
+          </div>
 
-    {/* SOCIAL ICONS (simple version) */}
-    <div className="flex gap-4 mt-6 text-gray-400">
-      <span className="hover:text-white cursor-pointer">FB</span>
-      <span className="hover:text-white cursor-pointer">TW</span>
-      <span className="hover:text-white cursor-pointer">IN</span>
-      <span className="hover:text-white cursor-pointer">IG</span>
-    </div>
-  </div>
+          <div>
+            <h3 className="text-white font-semibold mb-4">Services</h3>
+            <ul className="space-y-2 text-sm">
+              <li>Podcast</li>
+              <li>Content</li>
+              <li>Marketing</li>
+              <li>Strategy</li>
+            </ul>
+          </div>
 
-  {/* 🔴 QUICK LINKS */}
-  <div>
-    <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-    <ul className="space-y-2 text-sm">
-      <li><a href="#" className="hover:text-white">About</a></li>
-      <li><a href="#" className="hover:text-white">Services</a></li>
-      <li><a href="#" className="hover:text-white">Our Work</a></li>
-      <li><a href="#" className="hover:text-white">Contact</a></li>
-    </ul>
-  </div>
+          <div>
+            <h3 className="text-white font-semibold mb-4">Contact</h3>
+            <p className="text-sm">Bangalore, India</p>
+            <p className="text-sm mt-2 text-blue-400">+91 9663799617</p>
+            <p className="text-sm mt-2">hello@voxtent.in</p>
+          </div>
 
-  {/* 🔴 SERVICES */}
-  <div>
-    <h3 className="text-white font-semibold mb-4">Our Services</h3>
-    <ul className="space-y-2 text-sm">
-      <li>Podcast Production</li>
-      <li>Content Strategy</li>
-      <li>Video & Media</li>
-      <li>Growth Marketing</li>
-      <li>Content at Scale</li>
-    </ul>
-  </div>
+        </div>
 
-  {/* 🔴 CONTACT */}
-  <div>
-    <h3 className="text-white font-semibold mb-4">Contact Info</h3>
+        <div className="border-t border-gray-700 mt-10 pt-6 flex justify-between text-sm">
+          <p>© 2026 Voxtent</p>
+          <div className="flex gap-4">
+            <span>Privacy</span>
+            <span>Terms</span>
+          </div>
+        </div>
 
-    <p className="text-sm">Bangalore, India</p>
-
-    <p className="text-sm mt-2 text-blue-400 hover:underline cursor-pointer">
-      +91 9663799617
-    </p>
-
-    <p className="text-sm mt-2">
-      hello@voxtent.in
-    </p>
-  </div>
-
-</div>
-
-{/* 🔴 DIVIDER */}
-<div className="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between text-sm">
-
-  <p>© 2025 Voxtent. All rights reserved.</p>
-
-  <div className="flex gap-4 mt-4 md:mt-0">
-    <a href="#" className="hover:text-white">Privacy Policy</a>
-    <a href="#" className="hover:text-white">Terms</a>
-    <a href="#" className="hover:text-white">Cookies</a>
-  </div>
-
-</div>
-
-</footer>
-      
+      </footer>
 
     </main>
   );
