@@ -270,45 +270,74 @@ export default function Home() {
         </AnimatedSection>
       </section>
 
-      {/* INSIGHTS */}
-      <section id="insights" className="bg-[#f5efe6] py-20 px-6 md:px-16">
-        <AnimatedSection>
-          <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl font-bold mb-6">
-            Insights
-          </motion.h2>
-          <motion.p variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-gray-600 max-w-2xl">
-            Learn how content drives authority, growth, and revenue.
-          </motion.p>
-        </AnimatedSection>
-      </section>
+{/* INSIGHTS */}
+<section id="insights" className="bg-[#f5efe6] py-20 px-6 md:px-16">
+  <AnimatedSection>
+    <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
 
-      {/* FINAL CTA */}
-      <section id="contactus" className="relative bg-red-600 text-white py-24 px-6 md:px-16 overflow-hidden">
-        <img src="/Image/Sample5.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity" />
-        <div className="relative z-10">
-          <AnimatedSection>
-            <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-5xl font-bold max-w-3xl">
-              Your voice is your most underused business asset.
-            </motion.h2>
-            <motion.p variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mt-4 text-white/90 text-lg">
-              Let's figure out what it could be doing for you.
-            </motion.p>
-            <motion.button
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              onClick={() => setOpen(true)}
-              className="mt-8 bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
-            >
-              Start the conversation →
-            </motion.button>
-          </AnimatedSection>
-        </div>
-      </section>
+      <motion.p variants={fadeUp} className="text-red-600 uppercase tracking-widest text-sm mb-2">
+        Insights
+      </motion.p>
 
+      <motion.h2 variants={fadeUp} className="text-3xl font-bold mb-3">
+        Content that builds businesses.
+      </motion.h2>
+
+      <motion.p variants={fadeUp} className="text-gray-500 mb-12 max-w-2xl">
+        Perspectives on podcasting, content strategy, and what it actually takes to build authority in your sector.
+      </motion.p>
+
+      <div className="grid md:grid-cols-3 gap-8">
+
+        {[
+          {
+            tag: "Content Strategy",
+            title: "Why most B2B content budgets are spent in the wrong place",
+            desc: "Most companies spend 80% of their content budget on creation and almost nothing on distribution. Here's why that's backwards — and what a smarter split looks like.",
+            read: "4 min read",
+          },
+          {
+            tag: "Podcast",
+            title: "The podcast ROI question every founder asks — and how to actually answer it",
+            desc: "Podcast ROI isn't measured in downloads. It's measured in deals opened, trust built, and categories owned. We break down how to set the right metrics from day one.",
+            read: "5 min read",
+          },
+          {
+            tag: "Personal Branding",
+            title: "Your LinkedIn is a billboard. Your podcast is a relationship.",
+            desc: "A post gets you noticed. A show gets you trusted. The founders growing fastest in India right now are doing both — and using one to feed the other.",
+            read: "3 min read",
+          },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            variants={fadeUp}
+            whileHover={{ y: -8, boxShadow: "0 16px 40px rgba(0,0,0,0.10)" }}
+            className="bg-white rounded-xl p-6 border border-gray-100 cursor-pointer flex flex-col justify-between"
+          >
+            <div>
+              <span className="text-xs font-semibold text-red-600 uppercase tracking-widest">
+                {item.tag}
+              </span>
+              <h3 className="font-bold text-lg mt-3 mb-3 leading-snug">
+                {item.title}
+              </h3>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+            <div className="mt-6 flex justify-between items-center">
+              <span className="text-xs text-gray-400">{item.read}</span>
+              <span className="text-red-600 text-sm font-semibold">Read →</span>
+            </div>
+          </motion.div>
+        ))}
+
+      </div>
+
+    </motion.div>
+  </AnimatedSection>
+</section>
       {/* CONTACT MODAL */}
       {open && (
         <motion.div
