@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Voxtent",
-  description: "Voxtent",
+  description: "Build Podcasts,Videos & Content",
 };
 
 export default function RootLayout({
