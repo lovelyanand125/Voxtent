@@ -28,52 +28,16 @@ hidden: { opacity: 0, y: 30 },
 visible: {
 opacity: 1,
 y: 0,
-transition: {
-duration: 0.55,
-ease: EASE,
-},
+transition: { duration: 0.55, ease: EASE },
 },
 };
-
-const stagger = {
-hidden: {},
-visible: { transition: { staggerChildren: 0.12 } },
-};
-
-const personas = [
-{ title: "Scaling a business", desc: "You need authority, not noise. We help you build that.", link: "/for/scaling" },
-{ title: "Founder or CXO", desc: "Your story is your strongest asset. We help you tell it.", link: "/for/founders" },
-{ title: "Running a brand", desc: "Content that moves people from awareness to action.", link: "/for/brands" },
-{ title: "Building something new", desc: "Own your category before someone else does.", link: "/for/builders" },
-];
 
 const services = [
-{ title: "Podcast Production", desc: "End-to-end podcast studio — concept, production, distribution, and growth.", link: "/services/podcast", img: "/Image/image1.png" },
-{ title: "Video Content", desc: "Short-form cuts, reels, and long-form video engineered for business outcomes.", link: "/services/video", img: "/Image/hero1.jpg" },
-{ title: "Content Strategy", desc: "A content engine aligned to your sales funnel, sector, and audience.", link: "/services/content", img: "/Image/service3.jpg" },
-{ title: "Paid Marketing", desc: "Distribute your content where your buyers actually are.", link: "/services/marketing", img: "/Image/Sample4.jpg" },
-{ title: "Lead Gen & Sales", desc: "Turn authority content into pipeline and revenue.", link: "/services/leadgen", img: "/Image/image2.jpg" },
-];
-
-const insights = [
-{
-tag: "Content Strategy",
-title: "Why most B2B content budgets are spent in the wrong place",
-desc: "Most companies spend 80% of their content budget on creation and almost nothing on distribution.",
-read: "4 min read",
-},
-{
-tag: "Podcast",
-title: "The podcast ROI question every founder asks",
-desc: "Podcast ROI isn't measured in downloads.",
-read: "5 min read",
-},
-{
-tag: "Personal Branding",
-title: "Your LinkedIn is a billboard. Your podcast is a relationship.",
-desc: "A post gets you noticed. A show gets you trusted.",
-read: "3 min read",
-},
+{ title: "Podcast Production", desc: "End-to-end podcast studio", link: "/services/podcast", img: "/Image/image1.png" },
+{ title: "Video Content", desc: "Short & long-form content", link: "/services/video", img: "/Image/hero1.jpg" },
+{ title: "Content Strategy", desc: "Aligned to business growth", link: "/services/content", img: "/Image/service3.jpg" },
+{ title: "Paid Marketing", desc: "Reach the right audience", link: "/services/marketing", img: "/Image/Sample4.jpg" },
+{ title: "Lead Gen", desc: "Turn content into pipeline", link: "/services/leadgen", img: "/Image/image2.jpg" },
 ];
 
 function ServiceCard({ item }: { item: typeof services[0] }) {
@@ -87,18 +51,11 @@ onHoverEnd={() => setHovered(false)}
 animate={
 hovered
 ? { scale: 1.04, y: -8, boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }
-: { scale: 1, y: 0, boxShadow: "0 0px 0px rgba(0,0,0,0)" }
+: { scale: 1, y: 0 }
 }
 transition={{ duration: 0.25 }}
 className="rounded-xl overflow-hidden border border-gray-100 cursor-pointer"
-> <div className="relative overflow-hidden h-48">
-<motion.img
-src={item.img}
-alt={item.title}
-animate={hovered ? { scale: 1.08 } : { scale: 1 }}
-transition={{ duration: 0.4 }}
-className="w-full h-full object-cover"
-/> </div> <div className="p-6 bg-white"> <h3 className="font-semibold text-lg mb-1">{item.title}</h3> <p className="text-sm text-gray-500">{item.desc}</p> <p className="text-red-600 mt-3 text-sm font-semibold">How we do it →</p> </div>
+> <img src={item.img} className="h-48 w-full object-cover" /> <div className="p-6 bg-white"> <h3 className="font-semibold text-lg">{item.title}</h3> <p className="text-sm text-gray-500">{item.desc}</p> </div>
 </motion.div> </Link>
 );
 }
@@ -106,14 +63,62 @@ className="w-full h-full object-cover"
 export default function Home() {
 const [open, setOpen] = useState(false);
 
-return ( <main className="font-sans bg-[#FAF6F0] text-black"> <header className="sticky top-0 z-50 bg-[#FAF6F0]/90 backdrop-blur border-b border-red-200"> <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"> <h1 className="text-red-600 font-bold tracking-[0.2em] text-lg">VOXTENT</h1>
-<button onClick={() => setOpen(true)} className="bg-red-600 text-white px-5 py-2 rounded-md">
-Let's Talk </button> </div> </header>
+return ( <main className="bg-[#FAF6F0] text-black">
 
+  {/* HEADER */}
+  <header className="sticky top-0 z-50 bg-[#FAF6F0]/90 backdrop-blur border-b border-red-200">
+    <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 className="text-red-600 font-bold tracking-[0.2em]">VOXTENT</h1>
+      <button onClick={() => setOpen(true)} className="bg-red-600 text-white px-5 py-2 rounded-md">
+        Let's Talk
+      </button>
+    </div>
+  </header>
 
+  {/* HERO */}
+  <section className="relative h-screen flex items-center text-white overflow-hidden">
+    <motion.img
+      src="/Image/Sample5.jpg"
+      className="absolute w-full h-full object-cover"
+      initial={{ scale: 1.08 }}
+      animate={{ scale: 1 }}
+      transition={{ duration: 1.2, ease: EASE }}
+    />
+    <div className="absolute inset-0 bg-black/60" />
+
+    <div className="relative z-10 px-6 md:px-16 max-w-4xl">
+      <motion.h1
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="text-5xl md:text-7xl font-bold"
+      >
+        Your podcast is your most powerful business tool.
+      </motion.h1>
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+        className="mt-6 text-lg text-gray-300"
+      >
+        Build authority. Drive growth. Own your voice.
+      </motion.p>
+
+      <div className="mt-8">
+        <Link href="/services/podcast">
+          <button className="bg-red-500 px-6 py-3 rounded-lg">
+            Get Started
+          </button>
+        </Link>
+      </div>
+    </div>
+  </section>
+
+  {/* SERVICES */}
   <section className="py-20 px-6 md:px-16">
     <AnimatedSection>
-      <h2 className="text-3xl font-bold mb-6">Services</h2>
+      <h2 className="text-3xl font-bold mb-8">Services</h2>
       <div className="grid md:grid-cols-3 gap-8">
         {services.map((item, i) => (
           <ServiceCard key={i} item={item} />
@@ -121,6 +126,56 @@ Let's Talk </button> </div> </header>
       </div>
     </AnimatedSection>
   </section>
+
+  {/* FOOTER */}
+  <footer className="bg-[#0B1A2B] text-gray-300 py-16 px-6 md:px-16">
+    <div className="grid md:grid-cols-4 gap-10">
+      <div>
+        <h2 className="text-white font-bold text-xl mb-4 tracking-[0.15em]">VOXTENT</h2>
+        <p className="text-sm text-gray-400">
+          Building content engines that turn ideas into authority.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+        <ul className="space-y-2 text-sm">
+          {["About", "Services", "Insights", "Contact"].map((l) => (
+            <li key={l} className="hover:text-white cursor-pointer transition">
+              {l}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 className="text-white font-semibold mb-4">Services</h3>
+        <ul className="space-y-2 text-sm">
+          {["Podcast", "Content", "Marketing", "Strategy"].map((l) => (
+            <li key={l} className="hover:text-white cursor-pointer transition">
+              {l}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 className="text-white font-semibold mb-4">Contact</h3>
+        <p className="text-sm">Bangalore, India</p>
+        <p className="text-sm mt-2 text-blue-400">+91 9663799617</p>
+        <p className="text-sm mt-2">hello@voxtent.in</p>
+      </div>
+    </div>
+
+    <div className="border-t border-gray-700 mt-10 pt-6 flex justify-between text-sm">
+      <p>© 2026 Voxtent</p>
+      <div className="flex gap-4">
+        <span className="hover:text-white cursor-pointer transition">Privacy</span>
+        <span className="hover:text-white cursor-pointer transition">Terms</span>
+      </div>
+    </div>
+  </footer>
+
 </main>
 
 
