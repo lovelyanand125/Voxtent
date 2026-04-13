@@ -12,7 +12,7 @@ function AnimatedSection({ children, className = "" }: { children: React.ReactNo
       ref={ref}
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, ease: "easeOut" as const as const }}
+      transition={{ duration: 0.6, ease: "easeOut" as const }}
       className={className}
     >
       {children}
@@ -22,7 +22,7 @@ function AnimatedSection({ children, className = "" }: { children: React.ReactNo
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" as const as const } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" as const } },
 };
 
 const stagger = {
@@ -117,7 +117,7 @@ export default function PodcastPage() {
           alt="Podcast studio"
           initial={{ scale: 1.08 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 1.4, ease: "easeOut" as const as const }}
+          transition={{ duration: 1.4, ease: "easeOut" as const }}
           className="absolute w-full h-full object-cover top-0 left-0 opacity-25"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0B1A2B]/90 to-transparent" />
@@ -312,7 +312,7 @@ export default function PodcastPage() {
           <motion.div
             initial={{ opacity: 0, y: 40, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.35, ease: "easeOut" as const as const }}
+            transition={{ duration: 0.35, ease: "easeOut" as const }}
             className="bg-white p-8 rounded-2xl w-full max-w-md relative shadow-2xl"
           >
             <button onClick={() => setOpen(false)} className="absolute top-4 right-5 text-2xl text-gray-400 hover:text-black transition">×</button>
