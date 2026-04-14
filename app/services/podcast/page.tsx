@@ -77,39 +77,6 @@ export default function PodcastPage() {
   return (
     <main className="font-sans bg-[#FAF6F0] text-black">
 
-      {/* HEADER */}
-      <header className="sticky top-0 z-50 bg-[#FAF6F0]/90 backdrop-blur border-b border-red-200">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/">
-            <motion.h1
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-red-600 font-bold tracking-[0.2em] text-lg cursor-pointer"
-            >
-              VOXTENT
-            </motion.h1>
-          </Link>
-
-          <nav className="hidden md:flex gap-10 text-gray-700 text-sm font-medium">
-            {["Home", "Podcast", "Services", "Insights", "Contact Us"].map((item) => (
-              <a key={item} href={item === "Home" ? "/" : `/#${item.toLowerCase().replace(" ", "")}`} className="hover:text-red-600 transition">
-                {item}
-              </a>
-            ))}
-          </nav>
-
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            onClick={() => setOpen(true)}
-            className="bg-red-600 text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-red-700 transition"
-          >
-            Let's Talk
-          </motion.button>
-        </div>
-      </header>
-
       {/* HERO */}
       <section className="relative py-32 px-6 md:px-16 overflow-hidden bg-[#0B1A2B] text-white">
         <motion.img

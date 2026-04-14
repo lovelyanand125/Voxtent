@@ -61,22 +61,11 @@ className="rounded-xl overflow-hidden border border-gray-100 cursor-pointer"
 }
 
 export default function Home() {
-const [open, setOpen] = useState(false);
 
 return ( <main className="bg-[#FAF6F0] text-black">
 
-  {/* HEADER */}
-  <header className="sticky top-0 z-50 bg-[#FAF6F0]/90 backdrop-blur border-b border-red-200">
-    <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 className="text-red-600 font-bold tracking-[0.2em]">VOXTENT</h1>
-      <button onClick={() => setOpen(true)} className="bg-red-600 text-white px-5 py-2 rounded-md">
-        Let's Talk
-      </button>
-    </div>
-  </header>
-
   {/* HERO */}
-  <section className="relative h-screen flex items-center text-white overflow-hidden">
+  <section className="relative h-screen flex items-center text-white overflow-hidden pt-20">
     <motion.img
       src="/Image/Sample5.jpg"
       className="absolute w-full h-full object-cover"
@@ -130,6 +119,7 @@ return ( <main className="bg-[#FAF6F0] text-black">
   {/* FOOTER */}
   <footer className="bg-[#0B1A2B] text-gray-300 py-16 px-6 md:px-16">
     <div className="grid md:grid-cols-4 gap-10">
+
       <div>
         <h2 className="text-white font-bold text-xl mb-4 tracking-[0.15em]">VOXTENT</h2>
         <p className="text-sm text-gray-400">
@@ -140,22 +130,24 @@ return ( <main className="bg-[#FAF6F0] text-black">
       <div>
         <h3 className="text-white font-semibold mb-4">Quick Links</h3>
         <ul className="space-y-2 text-sm">
-          {["About", "Services", "Insights", "Contact"].map((l) => (
-            <li key={l} className="hover:text-white cursor-pointer transition">
-              {l}
-            </li>
-          ))}
+          <li className="hover:text-white cursor-pointer">About</li>
+          <li className="hover:text-white cursor-pointer">Services</li>
+          <li className="hover:text-white cursor-pointer">Insights</li>
+          <li>
+            <Link href="/contact" className="hover:text-white">
+              Contact
+            </Link>
+          </li>
         </ul>
       </div>
 
       <div>
         <h3 className="text-white font-semibold mb-4">Services</h3>
         <ul className="space-y-2 text-sm">
-          {["Podcast", "Content", "Marketing", "Strategy"].map((l) => (
-            <li key={l} className="hover:text-white cursor-pointer transition">
-              {l}
-            </li>
-          ))}
+          <li className="hover:text-white cursor-pointer">Podcast</li>
+          <li className="hover:text-white cursor-pointer">Content</li>
+          <li className="hover:text-white cursor-pointer">Marketing</li>
+          <li className="hover:text-white cursor-pointer">Strategy</li>
         </ul>
       </div>
 
@@ -165,13 +157,14 @@ return ( <main className="bg-[#FAF6F0] text-black">
         <p className="text-sm mt-2 text-blue-400">+91 9663799617</p>
         <p className="text-sm mt-2">hello@voxtent.in</p>
       </div>
+
     </div>
 
     <div className="border-t border-gray-700 mt-10 pt-6 flex justify-between text-sm">
       <p>© 2026 Voxtent</p>
       <div className="flex gap-4">
-        <span className="hover:text-white cursor-pointer transition">Privacy</span>
-        <span className="hover:text-white cursor-pointer transition">Terms</span>
+        <span className="hover:text-white cursor-pointer">Privacy</span>
+        <span className="hover:text-white cursor-pointer">Terms</span>
       </div>
     </div>
   </footer>

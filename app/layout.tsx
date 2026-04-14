@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "./Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,20 +15,30 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Voxtent",
-  description: "Build Podcasts,Videos & Content",
+  description: "Build Podcasts, Videos & Content",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+
+        {/* Header is now a separate Client Component */}
+        <Header />
+
+        {/* PAGE CONTENT */}
+        <main className="flex-1">
+          {children}
+        </main>
+
+      </body>
     </html>
   );
 }
