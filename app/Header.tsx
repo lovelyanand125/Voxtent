@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export default function Header() {
   const pathname = usePathname();
   const isPodcast = pathname.startsWith("/services/podcast");
+
+  const [open, setOpen] = useState(false);
 
   return (
     <header
@@ -20,7 +23,7 @@ export default function Header() {
         {/* LOGO */}
         <Link href="/">
           <span
-            className={`text-xl font-bold tracking-[0.2em] cursor-pointer transition ${
+            className={`text-xl font-bold tracking-[0.2em] cursor-pointer ${
               isPodcast ? "text-white" : "text-red-600"
             }`}
           >
@@ -28,27 +31,46 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* NAV */}
-        <nav
-          className={`hidden md:flex items-center gap-8 text-sm font-medium ${
-            isPodcast ? "text-gray-200" : "text-gray-700"
-          }`}
-        >
-          <Link href="/" className="hover:text-red-600 transition">Home</Link>
-          <Link href="/services/podcast" className="hover:text-red-600 transition">Podcast</Link>
-          <Link href="/services" className="hover:text-red-600 transition">Services</Link>
-          <Link href="/insights" className="hover:text-red-600 transition">Insights</Link>
-          <Link href="/contact" className="hover:text-red-600 transition">Contact Us</Link>
+        {/* DESKTOP NAV */}
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+          <Link href="/">Home</Link>
+          <Link href="/services/podcast">Podcast</Link>
+          <Link href="/services">Services</Link>
+          <Link href="/insights">Insights</Link>
+          <Link href="/contact">Contact Us</Link>
         </nav>
 
-        {/* CTA */}
-        <Link href="/contact">
-          <button className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition text-sm font-medium">
-            Let's Talk
-          </button>
-        </Link>
+        {/* MOBILE BUTTON */}
+        <button
+          className="md:hidden text-2xl"
+          onClick={() => setOpen(!open)}
+        >
+          ☰
+        </button>
+
+        {/* CTA (desktop only) */}
+        <div className="hidden md:block">
+          <Link href="/contact">
+            <button className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition text-sm">
+              Let's Talk
+            </button>
+          </Link>
+        </div>
 
       </div>
+
+      {/* MOBILE MENU */}
+      {open && (
+        <div className="md:hidden bg-white border-t px-6 py-4 space-y-4 text-sm">
+
+          <Link href="/" onClick={() => setOpen(false)}>Home</Link>
+          <Link href="/services/podcast" onClick={() => setOpen(false)}>Podcast</Link>
+          <Link href="/services" onClick={() => setOpen(false)}>Services</Link>
+          <Link href="/insights" onClick={() => setOpen(false)}>Insights</Link>
+          <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
+
+        </div>
+      )}
     </header>
   );
 }
