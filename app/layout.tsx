@@ -28,12 +28,22 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col relative">
 
-        {/* Header is now a separate Client Component */}
+        {/* ✅ GLOBAL BACKGROUND IMAGE */}
+        <div className="fixed inset-0 -z-10">
+          <img
+            src="/Image/Sample5.jpg"
+            alt="background"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-[#FAF6F0]/90" />
+        </div>
+
+        {/* ✅ HEADER */}
         <Header />
 
-        {/* PAGE CONTENT */}
+        {/* ✅ PAGE CONTENT */}
         <main className="flex-1">
           {children}
         </main>
