@@ -1,30 +1,48 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: Request) {
   try {
+    console.log("API HIT");
+
     const { name, email, message } = await req.json();
 
     if (!name || !email || !message) {
-      return Response.json({ error: "Missing required fields" }, { status: 400 });
+      return new Response(
+        JSON.stringify({ error: "Missing fields" }),
+        { status: 400 }
+      );
     }
 
-    await resend.emails.send({
-      from: "hello@voxtent.in",        // ← update once domain is verified
-      to: ["lovely.anand125@gmail.com"],
-      replyTo: email,                   // ← reply goes directly to the lead
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
+    const data = await resend.emails.send({
+      from: "Voxtent <hello@voxtent.in>",
+      to: [
+  "lovely.anand125@gmail.com",
+  "thekanishk.indrarun@gmail.com"
+],
+      replyTo: email,
       subject: `New lead from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong> ${message}</p>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Message:</b> ${message}</p>
       `,
     });
 
-    return Response.json({ success: true });
-  } catch (error) {
-    return Response.json({ error: "Failed to send email" }, { status: 500 });
+    console.log("EMAIL SENT:", data);
+
+    return new Response(
+      JSON.stringify({ success: true }),
+      { status: 200 }
+    );
+  } catch (error: any) {
+    console.error("ERROR:", error);
+
+    return new Response(
+      JSON.stringify({ error: error.message }),
+      { status: 500 }
+    );
   }
 }
