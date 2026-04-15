@@ -12,6 +12,7 @@ const [menuOpen, setMenuOpen] = useState(false);
 
 return (
 <>
+{/* HEADER */}
 <header
 className={`fixed top-0 left-0 w-full z-[9999] border-b ${
           isPodcast
@@ -40,14 +41,14 @@ className={`fixed top-0 left-0 w-full z-[9999] border-b ${
       {/* RIGHT SIDE */}
       <div className="flex items-center gap-4">
 
-        {/* CTA (ONLY DESKTOP) */}
+        {/* CTA (desktop only) */}
         <Link href="/contact" className="hidden md:block">
           <button className="bg-red-600 text-white px-4 py-2 rounded">
             Let’s Talk
           </button>
         </Link>
 
-        {/* HAMBURGER (ONLY MOBILE) */}
+        {/* MOBILE MENU BUTTON */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden flex flex-col gap-1"
