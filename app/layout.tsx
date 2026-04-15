@@ -12,12 +12,10 @@ const geistMono = Geist_Mono({
 variable: "--font-geist-mono",
 subsets: ["latin"],
 });
+
 export const metadata: Metadata = {
-  title: {
-    default: "Voxtent",
-    template: "%s | Voxtent",
-  },
-  description: "Build Podcasts & Video Creation",
+title: "Voxtent",
+description: "Build Podcasts, Videos & Content",
 };
 
 export default function RootLayout({
@@ -29,7 +27,8 @@ return (
 <html
 lang="en"
 className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-> <body className="min-h-full flex flex-col relative bg-[#FAF6F0] text-black">
+> <body className="min-h-full flex flex-col bg-[#FAF6F0] text-black">
+
 
     {/* BACKGROUND */}
     <div className="fixed inset-0 z-0 pointer-events-none">
@@ -46,14 +45,13 @@ className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       <Header />
     </div>
 
-    {/* CONTENT */}
+    {/* MAIN CONTENT */}
     <main className="flex-1 pt-20 relative z-10">
       {children}
     </main>
 
   </body>
 </html>
-
 
 );
 }
