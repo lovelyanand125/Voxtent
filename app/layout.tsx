@@ -13,8 +13,11 @@ variable: "--font-geist-mono",
 subsets: ["latin"],
 });
 export const metadata: Metadata = {
-title: "Voxtent",
-description: "Build Podcasts, Videos & Content",
+  title: {
+    default: "Voxtent",
+    template: "%s | Voxtent",
+  },
+  description: "Build Podcasts & Video Creation",
 };
 
 export default function RootLayout({

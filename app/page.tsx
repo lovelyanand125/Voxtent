@@ -101,7 +101,9 @@ function ServiceCard({ item }: { item: typeof services[0] }) {
     </Link>
   );
 }
-
+export const metadata = {
+  title: "Build Podcasts & Video Creation",
+};
 export default function Home() {
   return (
     <main className="bg-[#FAF6F0] text-black">
