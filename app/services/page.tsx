@@ -1,163 +1,198 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
-
-const EASE = [0.25, 0.1, 0.25, 1] as const;
-
-function Section({ children }: { children: React.ReactNode }) {
-const ref = useRef(null);
-const inView = useInView(ref, { once: true, margin: "-100px" });
-
-return (
-<motion.div
-ref={ref}
-initial={{ opacity: 0, y: 60 }}
-animate={inView ? { opacity: 1, y: 0 } : {}}
-transition={{ duration: 0.7, ease: EASE }}
->
-{children}
-</motion.div>
-);
-}
 
 const services = [
 {
 title: "Podcast Production",
-desc: "End-to-end podcast creation that builds authority.",
-result: "3x audience growth in 90 days",
+desc: "Build authority with a podcast that drives real business outcomes.",
+img: "/Image/image1.png",
+result: "50K+ audience growth for B2B founders",
 link: "/services/podcast",
 },
 {
 title: "Video Content",
-desc: "High-performing video content across platforms.",
-result: "2M+ monthly reach for clients",
+desc: "Short & long-form video designed for reach and retention.",
+img: "/Image/s2.jpg",
+result: "2M+ monthly impressions",
 link: "/services/video",
 },
 {
 title: "Content Strategy",
-desc: "Strategic storytelling aligned with revenue.",
-result: "Clear positioning + inbound pipeline",
+desc: "Clarity in positioning, messaging, and execution.",
+img: "/Image/s3.jpg",
+result: "Inbound pipeline within 90 days",
 link: "/services/content",
 },
 ];
 
 export default function ServicesPage() {
+const ref = useRef(null);
+const { scrollYProgress } = useScroll({ target: ref });
+const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
+
 return ( <main className="bg-[#FAF6F0] text-black">
 
 
-  {/* HERO (DIFFERENT FROM HOME) */}
-  <section className="py-32 px-6 md:px-16 max-w-5xl">
-    <Section>
-      <p className="text-red-600 uppercase text-sm mb-4">
-        Services
-      </p>
+  {/* HERO */}
+  <section className="relative h-[80vh] flex items-center overflow-hidden">
+    <motion.img
+      src="/Image/Sample5.jpg"
+      className="absolute w-full h-full object-cover"
+      style={{ y }}
+    />
+    <div className="absolute inset-0 bg-black/60" />
 
-      <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-        We don’t just create content. <br />
-        <span className="text-gray-500">
-          We build growth systems.
-        </span>
+    <div className="relative z-10 px-6 md:px-16 max-w-4xl text-white">
+      <h1 className="text-5xl md:text-6xl font-bold">
+        Services designed for growth
       </h1>
-
-      <p className="mt-6 text-lg text-gray-600 max-w-2xl">
-        Every service is designed to move your business forward —
-        not just generate views.
+      <p className="mt-6 text-gray-300">
+        Not content for vanity — content that drives business.
       </p>
-    </Section>
-  </section>
-
-  {/* PROBLEM → INSIGHT */}
-  <section className="py-24 px-6 md:px-16 bg-white">
-    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
-
-      <Section>
-        <h2 className="text-3xl font-bold mb-4">
-          Most content doesn’t convert.
-        </h2>
-        <p className="text-gray-600">
-          Brands are producing content, but without strategy,
-          distribution, or measurable outcomes.
-        </p>
-      </Section>
-
-      <Section>
-        <h2 className="text-3xl font-bold mb-4">
-          We fix that.
-        </h2>
-        <p className="text-gray-600">
-          Our services combine storytelling, systems, and growth
-          to turn content into a revenue channel.
-        </p>
-      </Section>
-
     </div>
   </section>
 
-  {/* SERVICES — INTERACTIVE STACK */}
-  <section className="py-24 px-6 md:px-16">
-    <div className="max-w-5xl mx-auto space-y-20">
+  {/* STORY */}
+  <section className="py-24 px-6 md:px-16 max-w-6xl mx-auto">
+    <div className="grid md:grid-cols-2 gap-16">
+      <motion.div initial={{ opacity: 0, x: -60 }} whileInView={{ opacity: 1, x: 0 }}>
+        <h2 className="text-3xl font-bold mb-4">Content without strategy fails.</h2>
+        <p className="text-gray-600">
+          Most brands create content, but it doesn’t lead to business growth.
+        </p>
+      </motion.div>
 
-      {services.map((s, i) => (
-        <Section key={i}>
-          <div className="border-l-4 border-red-600 pl-6">
+      <motion.div initial={{ opacity: 0, x: 60 }} whileInView={{ opacity: 1, x: 0 }}>
+        <h2 className="text-3xl font-bold mb-4">We build systems.</h2>
+        <p className="text-gray-600">
+          We turn content into a growth engine — not just output.
+        </p>
+      </motion.div>
+    </div>
+  </section>
 
-            <h3 className="text-3xl font-bold mb-2">
-              {s.title}
-            </h3>
+  {/* SERVICES */}
+  <section ref={ref} className="space-y-32 px-6 md:px-16 py-24">
+    {services.map((s, i) => (
+      <div key={i} className="grid md:grid-cols-2 gap-12 items-center">
 
-            <p className="text-gray-600 mb-4">
-              {s.desc}
+        <motion.img
+          src={s.img}
+          className="rounded-xl shadow-xl"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+        />
+
+        <motion.div initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }}>
+          <h3 className="text-3xl font-bold mb-4">{s.title}</h3>
+          <p className="text-gray-600 mb-4">{s.desc}</p>
+          <p className="text-red-600 font-semibold mb-6">Result: {s.result}</p>
+
+          <div className="bg-white border p-5 rounded-lg mb-6">
+            <p className="text-sm text-gray-600">
+              Helped a founder grow from zero to 50K audience and build inbound leads.
             </p>
-
-            <p className="text-sm text-red-600 font-semibold mb-6">
-              Result: {s.result}
-            </p>
-
-            {/* CASE STUDY */}
-            <div className="bg-white border p-6 rounded-lg mb-6">
-              <h4 className="font-semibold mb-2">
-                Case Study
-              </h4>
-              <p className="text-sm text-gray-600">
-                Helped a B2B founder grow from zero to 50K audience
-                through strategic podcasting and content distribution.
-              </p>
-            </div>
-
-            {/* CTA */}
-            <Link href={s.link}>
-              <button className="bg-red-500 text-white px-5 py-2 rounded">
-                Explore Service →
-              </button>
-            </Link>
-
           </div>
-        </Section>
-      ))}
 
+          <Link href={s.link}>
+            <button className="bg-red-500 text-white px-5 py-2 rounded">
+              Explore →
+            </button>
+          </Link>
+        </motion.div>
+
+      </div>
+    ))}
+  </section>
+
+  {/* ENGAGEMENT */}
+  <section className="py-24 px-6 md:px-16 bg-white text-center">
+    <h2 className="text-3xl font-bold mb-10">How we work</h2>
+
+    <div className="grid md:grid-cols-3 gap-10">
+      <div>
+        <h3 className="font-bold mb-2">Step 1</h3>
+        <p className="text-gray-600">Understand your business deeply</p>
+      </div>
+
+      <div>
+        <h3 className="font-bold mb-2">Step 2</h3>
+        <p className="text-gray-600">Build content systems</p>
+      </div>
+
+      <div>
+        <h3 className="font-bold mb-2">Step 3</h3>
+        <p className="text-gray-600">Scale growth</p>
+      </div>
     </div>
   </section>
 
-  {/* FINAL CTA */}
-  <section className="py-28 px-6 md:px-16 text-center bg-black text-white">
-    <Section>
-      <h2 className="text-4xl font-bold mb-6">
-        Ready to turn content into growth?
-      </h2>
+  {/* CTA */}
+  <section className="py-28 text-center bg-black text-white px-6">
+    <h2 className="text-4xl font-bold mb-6">
+      Ready to build your content engine?
+    </h2>
 
-      <p className="text-gray-400 mb-8">
-        Let’s build a system tailored to your business.
-      </p>
-
-      <Link href="/contact">
-        <button className="bg-red-600 px-8 py-4 rounded-lg">
-          Let’s Talk
-        </button>
-      </Link>
-    </Section>
+    <Link href="/contact">
+      <button className="bg-red-600 px-8 py-4 rounded-lg">
+        Let’s Talk
+      </button>
+    </Link>
   </section>
+
+  {/* FOOTER */}
+  <footer className="bg-[#0B1A2B] text-gray-300 py-16 px-6 md:px-16">
+    <div className="grid md:grid-cols-4 gap-10">
+
+      <div>
+        <h2 className="text-white font-bold text-xl mb-4 tracking-[0.15em]">
+          VOXTENT
+        </h2>
+        <p className="text-sm text-gray-400">
+          Building content engines that turn ideas into authority.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+        <ul className="space-y-2 text-sm">
+          <li><Link href="/">Home</Link></li>
+          <li><Link href="/services">Services</Link></li>
+          <li><Link href="/insights">Insights</Link></li>
+          <li><Link href="/contact">Contact</Link></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 className="text-white font-semibold mb-4">Services</h3>
+        <ul className="space-y-2 text-sm">
+          <li><Link href="/services/podcast">Podcast</Link></li>
+          <li><Link href="/services/content">Content</Link></li>
+          <li><Link href="/services/marketing">Marketing</Link></li>
+          <li><Link href="/services/leadgen">Lead Gen</Link></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 className="text-white font-semibold mb-4">Contact</h3>
+        <p className="text-sm">Bangalore, India</p>
+        <p className="text-sm mt-2 text-blue-400">+91 9663799617</p>
+        <p className="text-sm mt-2">hello@voxtent.in</p>
+      </div>
+
+    </div>
+
+    <div className="border-t border-gray-700 mt-10 pt-6 flex justify-between text-sm">
+      <p>© 2026 Voxtent</p>
+      <div className="flex gap-4">
+        <span>Privacy</span>
+        <span>Terms</span>
+      </div>
+    </div>
+  </footer>
 
 </main>
 
