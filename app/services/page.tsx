@@ -39,7 +39,7 @@ return ( <main className="bg-[#FAF6F0] text-black">
   {/* HERO */}
   <section className="relative h-[80vh] flex items-center overflow-hidden">
     <motion.img
-      src="/Image/Sample5.jpg"
+      src="/Image/s3.jpg"
       className="absolute w-full h-full object-cover"
       style={{ y }}
     />
