@@ -7,8 +7,7 @@ import { useState } from "react";
 export default function Header() {
 const pathname = usePathname();
 const isPodcast = pathname.startsWith("/services/podcast");
-
-const [menuOpen, setMenuOpen] = useState(false);
+const [isOpen, setIsOpen] = useState(false);
 
 return (
 <>
@@ -17,14 +16,18 @@ return (
 className={`fixed top-0 left-0 w-full z-[9999] border-b ${
           isPodcast
             ? "bg-black/70 backdrop-blur text-white border-white/10"
-            : "bg-[#FAF6F0]/95 backdrop-blur text-black border-gray-200"
+            : "bg-[#FAF6F0] text-black"
         }`}
 > <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
 
       {/* LOGO */}
       <Link href="/">
-        <h1 className="font-bold tracking-[0.2em] text-red-600">
+        <h1
+          className={`font-bold tracking-[0.2em] text-xl ${
+            isPodcast ? "text-white" : "text-red-600"
+          }`}
+        >
           VOXTENT
         </h1>
       </Link>
@@ -38,57 +41,66 @@ className={`fixed top-0 left-0 w-full z-[9999] border-b ${
         <Link href="/contact">Contact</Link>
       </nav>
 
-      {/* RIGHT SIDE */}
-      <div className="flex items-center gap-4">
-
-        {/* CTA (desktop only) */}
-        <Link href="/contact" className="hidden md:block">
-          <button className="bg-red-600 text-white px-4 py-2 rounded">
+      {/* CTA (DESKTOP) */}
+      <div className="hidden md:block">
+        <Link href="/contact">
+          <button className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition">
             Let’s Talk
           </button>
         </Link>
-
-        {/* MOBILE MENU BUTTON */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex flex-col gap-1"
-        >
-          <span className="w-6 h-[2px] bg-black"></span>
-          <span className="w-6 h-[2px] bg-black"></span>
-          <span className="w-6 h-[2px] bg-black"></span>
-        </button>
-
       </div>
+
+      {/* HAMBURGER (MOBILE) */}
+      <button
+        className="md:hidden text-2xl"
+        onClick={() => setIsOpen(true)}
+      >
+        ☰
+      </button>
     </div>
   </header>
 
-  {/* MOBILE MENU */}
-  {menuOpen && (
-    <div className="fixed inset-0 bg-black/60 z-[9998]">
-      <div className="absolute right-0 top-0 w-[80%] h-full bg-white p-6">
-
-        <button onClick={() => setMenuOpen(false)} className="mb-6">
-          Close ✕
-        </button>
-
-        <div className="flex flex-col gap-6 text-lg">
-
-          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link href="/services/podcast" onClick={() => setMenuOpen(false)}>Podcast</Link>
-          <Link href="/services" onClick={() => setMenuOpen(false)}>Services</Link>
-          <Link href="/insights" onClick={() => setMenuOpen(false)}>Insights</Link>
-          <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
-
-          <Link href="/contact">
-            <button className="mt-4 bg-red-600 text-white px-4 py-3 rounded">
-              Let’s Talk
-            </button>
-          </Link>
-
-        </div>
-      </div>
-    </div>
+  {/* OVERLAY */}
+  {isOpen && (
+    <div
+      className="fixed inset-0 bg-black/40 z-[9998]"
+      onClick={() => setIsOpen(false)}
+    />
   )}
+
+  {/* MOBILE MENU */}
+  <div
+    className={`fixed top-0 right-0 h-full w-[80%] max-w-sm bg-white z-[9999] transform transition-transform duration-300 ease-in-out shadow-2xl ${
+      isOpen ? "translate-x-0" : "translate-x-full"
+    }`}
+  >
+    {/* TOP BAR */}
+    <div className="flex justify-between items-center p-6 border-b">
+      <span className="font-bold text-lg">Menu</span>
+      <button
+        onClick={() => setIsOpen(false)}
+        className="text-2xl"
+      >
+        ✕
+      </button>
+    </div>
+
+    {/* NAV ITEMS */}
+    <nav className="flex flex-col gap-6 p-6 text-lg font-medium">
+      <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
+      <Link href="/services/podcast" onClick={() => setIsOpen(false)}>Podcast</Link>
+      <Link href="/services" onClick={() => setIsOpen(false)}>Services</Link>
+      <Link href="/insights" onClick={() => setIsOpen(false)}>Insights</Link>
+      <Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
+
+      {/* CTA */}
+      <Link href="/contact" onClick={() => setIsOpen(false)}>
+        <button className="mt-6 bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition">
+          Let’s Talk
+        </button>
+      </Link>
+    </nav>
+  </div>
 </>
 
 
