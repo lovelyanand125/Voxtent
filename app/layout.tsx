@@ -28,10 +28,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col relative">
+      <body className="min-h-full flex flex-col bg-[#FAF6F0] text-black">
 
-        {/* ✅ GLOBAL BACKGROUND IMAGE */}
-        <div className="fixed inset-0 -z-10">
+        {/* ✅ BACKGROUND (fixed but safe) */}
+        <div className="fixed inset-0 z-0 pointer-events-none">
           <img
             src="/Image/Sample5.jpg"
             alt="background"
@@ -40,11 +40,13 @@ export default function RootLayout({
           <div className="absolute inset-0 bg-[#FAF6F0]/90" />
         </div>
 
-        {/* ✅ HEADER */}
-        <Header />
+        {/* ✅ HEADER (forced above everything) */}
+        <div className="relative z-[9999]">
+          <Header />
+        </div>
 
-        {/* ✅ PAGE CONTENT */}
-        <main className="flex-1">
+        {/* ✅ PAGE CONTENT (spacing added for fixed header) */}
+        <main className="flex-1 pt-20 relative z-10">
           {children}
         </main>
 
