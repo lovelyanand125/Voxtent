@@ -4,86 +4,118 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Podcast", href: "/services/podcast" },
+  { label: "Services", href: "/services" },
+  { label: "Insights", href: "/insights" },
+  { label: "Contact Us", href: "/contact" },
+];
+
 export default function Header() {
   const pathname = usePathname();
   const isPodcast = pathname.startsWith("/services/podcast");
-
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const close = () => setMenuOpen(false);
 
   return (
     <>
-      {/* HEADER */}
+      {/* ── MAIN HEADER BAR ── */}
       <header
-        className={`fixed top-0 left-0 w-full z-[9999] ${
-          isPodcast
-            ? "bg-black text-white border-b border-white/10"
-            : "bg-[#FAF6F0] text-black border-b border-gray-200"
-        } shadow-lg`}
+        style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "70px", zIndex: 10000 }}
+        className={`shadow-md transition-colors duration-300 ${
+          isPodcast ? "bg-black text-white" : "bg-white text-black"
+        }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto h-full px-5 flex items-center justify-between">
 
           {/* LOGO */}
-          <Link href="/">
-            <span
-              className={`font-extrabold text-lg tracking-[0.25em] cursor-pointer ${
-                isPodcast ? "text-white" : "text-red-600"
-              }`}
-            >
+          <Link href="/" onClick={close}>
+            <span className="font-extrabold tracking-[0.25em] text-red-600 text-lg">
               VOXTENT
             </span>
           </Link>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden md:flex items-center gap-8 text-sm font-semibold">
-            <Link href="/" className="hover:text-red-600">Home</Link>
-            <Link href="/services/podcast" className="hover:text-red-600">Podcast</Link>
-            <Link href="/services" className="hover:text-red-600">Services</Link>
-            <Link href="/insights" className="hover:text-red-600">Insights</Link>
-            <Link href="/contact" className="hover:text-red-600">Contact</Link>
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`hover:text-red-600 transition ${
+                  pathname === link.href ? "text-red-600" : isPodcast ? "text-gray-200" : "text-gray-700"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
 
-          {/* RIGHT SIDE */}
-          <div className="flex items-center gap-4">
-
-            {/* CTA (desktop) */}
-            <Link href="/contact">
-              <button className="hidden md:block bg-red-600 text-white px-5 py-2.5 rounded-md font-semibold shadow-md hover:bg-red-700 transition">
-                Let’s Talk
-              </button>
-            </Link>
-
-            {/* MOBILE MENU BUTTON */}
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden flex flex-col gap-1"
-            >
-              <span className={`w-6 h-0.5 ${isPodcast ? "bg-white" : "bg-black"}`} />
-              <span className={`w-6 h-0.5 ${isPodcast ? "bg-white" : "bg-black"}`} />
-              <span className={`w-6 h-0.5 ${isPodcast ? "bg-white" : "bg-black"}`} />
+          {/* DESKTOP CTA */}
+          <Link href="/contact" className="hidden md:block">
+            <button className="bg-red-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-red-700 transition">
+              Let's Talk
             </button>
+          </Link>
 
-          </div>
+          {/* MOBILE: HAMBURGER */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px]"
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block h-[2px] w-6 transition-all duration-300 ${
+                isPodcast ? "bg-white" : "bg-gray-800"
+              } ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}`}
+            />
+            <span
+              className={`block h-[2px] w-6 transition-all duration-300 ${
+                isPodcast ? "bg-white" : "bg-gray-800"
+              } ${menuOpen ? "opacity-0 scale-x-0" : ""}`}
+            />
+            <span
+              className={`block h-[2px] w-6 transition-all duration-300 ${
+                isPodcast ? "bg-white" : "bg-gray-800"
+              } ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`}
+            />
+          </button>
+
         </div>
       </header>
 
-      {/* MOBILE MENU */}
+      {/* ── MOBILE FULL-SCREEN MENU ── */}
       {menuOpen && (
         <div
-          className={`fixed inset-0 z-[9998] ${
-            isPodcast ? "bg-black text-white" : "bg-[#FAF6F0] text-black"
-          } flex flex-col items-center justify-center gap-8 text-lg font-semibold`}
+          style={{ position: "fixed", inset: 0, zIndex: 9999, paddingTop: "70px" }}
+          className="md:hidden bg-white flex flex-col"
         >
-          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link href="/services/podcast" onClick={() => setMenuOpen(false)}>Podcast</Link>
-          <Link href="/services" onClick={() => setMenuOpen(false)}>Services</Link>
-          <Link href="/insights" onClick={() => setMenuOpen(false)}>Insights</Link>
-          <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+          {/* NAV LINKS */}
+          <nav className="flex flex-col flex-1 px-6 pt-6 gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={close}
+                className={`text-lg font-medium py-4 border-b border-gray-100 hover:text-red-600 transition ${
+                  pathname === link.href ? "text-red-600" : "text-gray-800"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-          <Link href="/contact" onClick={() => setMenuOpen(false)}>
-            <button className="bg-red-600 text-white px-6 py-3 rounded-md mt-4">
-              Let’s Talk
-            </button>
-          </Link>
+          {/* MOBILE CTA */}
+          <div className="px-6 py-8">
+            <Link href="/contact" onClick={close}>
+              <button className="w-full bg-red-600 text-white py-4 rounded-xl text-base font-semibold hover:bg-red-700 transition">
+                Let's Talk
+              </button>
+            </Link>
+            <p className="text-center text-xs text-gray-400 mt-3">hello@voxtent.in · +91 96637 99617</p>
+          </div>
         </div>
       )}
     </>
