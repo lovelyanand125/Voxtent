@@ -14,8 +14,11 @@ subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-title: "Voxtent",
-description: "Build Podcasts, Videos & Content",
+  title: {
+    default: "Voxtent",
+    template: "%s | Voxtent",
+  },
+  description: "Build Podcasts, Videos & Content that drive business growth.",
 };
 
 export default function RootLayout({
