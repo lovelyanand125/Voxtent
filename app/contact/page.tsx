@@ -60,7 +60,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/75" />
         <div className="absolute inset-0 bg-[#0b1a2b]/25" />
 
-        <div className="relative z-10 max-w-4xl pt-10 md:pt-16">
+        <div className="relative z-10 max-w-4xl pt-16 md:pt-24">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -78,7 +78,7 @@ export default function ContactPage() {
             Tell us about your idea - we’ll guide you forward.
           </motion.p>
 
-          <div className="mt-6 flex gap-3 flex-wrap text-sm">
+          <div className="mt-12 flex gap-3 flex-wrap text-sm">
             <span className="bg-red-500/20 text-red-100 border border-red-300/20 px-4 py-2 rounded-full backdrop-blur-sm">
               ⚡ 24h response
             </span>
@@ -198,7 +198,7 @@ export default function ContactPage() {
                   className="border border-black/10 p-3 w-full rounded-lg focus:ring-2 focus:ring-red-400 transition outline-none"
                 />
 
-                <p className="text-sm text-gray-500">
+                <p className="mt-8 text-sm text-gray-500">
                   👉 We review every request personally. Expect a response within
                   24 hours.
                 </p>
