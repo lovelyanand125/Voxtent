@@ -14,11 +14,8 @@ subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Voxtent",
-    template: "%s | Voxtent",
-  },
-  description: "Build Podcasts, Videos & Content that drive business growth.",
+title: "Build Podcasts & Video Creation | Voxtent",
+description: "Build Podcasts, Videos & Content",
 };
 
 export default function RootLayout({
@@ -29,12 +26,11 @@ children: React.ReactNode;
 return (
 <html
 lang="en"
-className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-> <body className="min-h-full flex flex-col bg-[#FAF6F0] text-black">
+className={`${geistSans.variable} ${geistMono.variable}`}
+> <body className="min-h-screen flex flex-col bg-[#FAF6F0] text-black">
 
-
-    {/* BACKGROUND */}
-    <div className="fixed inset-0 z-0 pointer-events-none">
+    {/* ✅ BACKGROUND (NOW SAFE — NO CLICK BLOCKING) */}
+    <div className="fixed inset-0 -z-10">
       <img
         src="/Image/Sample5.jpg"
         alt="background"
@@ -43,18 +39,17 @@ className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       <div className="absolute inset-0 bg-[#FAF6F0]/90" />
     </div>
 
-    {/* HEADER */}
-    <div className="relative z-[9999]">
-      <Header />
-    </div>
+    {/* ✅ HEADER */}
+    <Header />
 
-    {/* MAIN CONTENT */}
-    <main className="flex-1 pt-20 relative z-10">
+    {/* ✅ MAIN CONTENT */}
+    <main className="flex-1 pt-20">
       {children}
     </main>
 
   </body>
 </html>
+
 
 );
 }
