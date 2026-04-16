@@ -217,49 +217,7 @@ return ( <main className="min-h-screen bg-[#FAF6F0] flex flex-col">
     </div>
   </section>
 
-  {/* FOOTER */}
-  <footer className="bg-[#0B1A2B] text-white px-6 md:px-16 py-16">
-    <div className="grid md:grid-cols-4 gap-10">
-
-      <div>
-        <h2 className="font-bold text-lg">VOXTENT</h2>
-        <p className="text-sm text-gray-400 mt-2">
-          Building content engines that turn ideas into authority.
-        </p>
-      </div>
-
-      <div>
-        <h3 className="font-semibold mb-3">Quick Links</h3>
-        <div className="flex flex-col gap-2 text-sm">
-          <Link href="/">Home</Link>
-          <Link href="/services">Services</Link>
-          <Link href="/insights">Insights</Link>
-          <Link href="/contact">Contact</Link>
-        </div>
-      </div>
-
-      <div>
-        <h3 className="font-semibold mb-3">Services</h3>
-        <div className="flex flex-col gap-2 text-sm">
-          <Link href="/podcast">Podcast</Link>
-          <Link href="/services">Content</Link>
-          <Link href="/services">Marketing</Link>
-        </div>
-      </div>
-
-      <div>
-        <h3 className="font-semibold mb-3">Contact</h3>
-        <p>Bangalore, India</p>
-        <p className="text-blue-400">+91 9663799617</p>
-        <p>hello@voxtent.in</p>
-      </div>
-
-    </div>
-
-    <div className="border-t border-white/10 mt-10 pt-6 text-sm text-gray-400">
-      2026 Voxtent
-    </div>
-  </footer>
+  
 
 </main>
 

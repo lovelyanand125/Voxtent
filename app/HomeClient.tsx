@@ -88,57 +88,6 @@ return ( <main className="bg-[#FAF6F0] text-black">
     </div>
   </section>
 
-  {/* FOOTER */}
-  <footer className="bg-[#0B1A2B] text-gray-300 py-16 px-6 md:px-16">
-    <div className="grid md:grid-cols-4 gap-10">
-
-      <div>
-        <h2 className="text-white font-bold text-xl mb-4 tracking-[0.15em]">
-          VOXTENT
-        </h2>
-        <p className="text-sm text-gray-400">
-          Building content engines that turn ideas into authority.
-        </p>
-      </div>
-
-      <div>
-        <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-        <ul className="space-y-2 text-sm">
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/services">Services</Link></li>
-          <li><Link href="/insights">Insights</Link></li>
-          <li><Link href="/contact">Contact</Link></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 className="text-white font-semibold mb-4">Services</h3>
-        <ul className="space-y-2 text-sm">
-          <li><Link href="/services/podcast">Podcast</Link></li>
-          <li><Link href="/services/content">Content</Link></li>
-          <li><Link href="/services/marketing">Marketing</Link></li>
-          <li><Link href="/services/leadgen">Lead Gen</Link></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 className="text-white font-semibold mb-4">Contact</h3>
-        <p className="text-sm">Bangalore, India</p>
-        <p className="text-sm mt-2 text-blue-400">+91 9663799617</p>
-        <p className="text-sm mt-2">hello@voxtent.in</p>
-      </div>
-
-    </div>
-
-    <div className="border-t border-gray-700 mt-10 pt-6 flex justify-between text-sm">
-      <p>© 2026 Voxtent</p>
-      <div className="flex gap-4">
-        <span>Privacy</span>
-        <span>Terms</span>
-      </div>
-    </div>
-  </footer>
-
 </main>
 
 

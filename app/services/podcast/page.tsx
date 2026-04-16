@@ -297,44 +297,6 @@ export default function PodcastPage() {
         </motion.div>
       )}
 
-      {/* FOOTER */}
-      <footer className="bg-[#0B1A2B] text-gray-300 py-16 px-6 md:px-16">
-        <div className="grid md:grid-cols-4 gap-10">
-          <div>
-            <h2 className="text-white font-bold text-xl mb-4 tracking-[0.15em]">VOXTENT</h2>
-            <p className="text-sm text-gray-400">Building content engines that turn ideas into authority.</p>
-          </div>
-          <div>
-            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              {["About", "Services", "Insights", "Contact"].map((l) => (
-                <li key={l} className="hover:text-white cursor-pointer transition">{l}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-white font-semibold mb-4">Services</h3>
-            <ul className="space-y-2 text-sm">
-              {["Podcast", "Content", "Marketing", "Strategy"].map((l) => (
-                <li key={l} className="hover:text-white cursor-pointer transition">{l}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-white font-semibold mb-4">Contact</h3>
-            <p className="text-sm">Bangalore, India</p>
-            <p className="text-sm mt-2 text-blue-400">+91 9663799617</p>
-            <p className="text-sm mt-2">hello@voxtent.in</p>
-          </div>
-        </div>
-        <div className="border-t border-gray-700 mt-10 pt-6 flex justify-between text-sm">
-          <p>© 2026 Voxtent</p>
-          <div className="flex gap-4">
-            <span className="hover:text-white cursor-pointer transition">Privacy</span>
-            <span className="hover:text-white cursor-pointer transition">Terms</span>
-          </div>
-        </div>
-      </footer>
 
     </main>
   );
