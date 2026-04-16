@@ -13,7 +13,7 @@ type Article = {
   category: string;
   date: string;
   readTime: string;
-  img?: string;
+  img?: string | null;
   excerpt: string;
   sections: { heading: string; body: string }[];
   keyTakeaways: string[];
