@@ -55,7 +55,7 @@ return ( <main className="min-h-screen bg-[#FAF6F0] flex flex-col">
   {/* HERO */}
   <section className="relative py-28 px-6 md:px-16 text-white overflow-hidden">
     <motion.img
-      src="/Image/c3.jpg"
+      src="/Image/c2.jpg"
       className="absolute inset-0 w-full h-full object-cover"
       initial={{ scale: 1.05 }}
       animate={{ scale: 1 }}
@@ -100,7 +100,7 @@ return ( <main className="min-h-screen bg-[#FAF6F0] flex flex-col">
         className="md:col-span-2 space-y-10"
       >
         <img
-          src="/Image/c2.jpg"
+          src="/Image/c3.jpg"
           className="rounded-xl shadow w-full h-64 object-cover"
         />
 
@@ -123,7 +123,6 @@ return ( <main className="min-h-screen bg-[#FAF6F0] flex flex-col">
 
         {/* EXTRA TRUST */}
         <div className="text-sm text-gray-600">
-          <p>✔ We respond within 24 hours</p>
           <p>✔ No spam, no sales pressure</p>
           <p>✔ Clear next steps guaranteed</p>
         </div>
