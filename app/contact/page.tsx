@@ -78,7 +78,7 @@ return ( <main className="min-h-screen bg-[#FAF6F0] flex flex-col">
         animate={{ opacity: 1, y: 0 }}
         className="mt-4 text-gray-300"
       >
-        Tell us about your idea — we’ll guide you forward.
+        Tell us about your idea - we’ll guide you forward.
       </motion.p>
 
       <div className="mt-6 flex gap-3 flex-wrap text-sm">
