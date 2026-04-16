@@ -74,7 +74,7 @@ const articles = [
       "Strategies to foster engagement and trust with your audience across LinkedIn, podcasts, and beyond.",
     date: "Apr 8, 2026",
     readTime: "6 min read",
-    img: "/Image/c1.jpg",    // 📁 add your JPG here
+    img: "/Image/c2.jpg",    // 📁 add your JPG here
     isVideo: false,
   },
   {
