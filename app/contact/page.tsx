@@ -204,17 +204,6 @@ return ( <main className="min-h-screen bg-[#FAF6F0] flex flex-col">
     </div>
   </section>
 
-  {/* TESTIMONIAL */}
-  <section className="px-6 md:px-16 pb-20 text-center">
-    <div className="max-w-3xl mx-auto">
-      <p className="italic text-gray-700 text-lg">
-        “Voxtent helped us scale from 0 to 50K audience and build a real inbound pipeline.”
-      </p>
-      <p className="text-sm text-gray-500 mt-3">
-        — Founder, B2B SaaS Company
-      </p>
-    </div>
-  </section>
 
   
 
