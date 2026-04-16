@@ -65,7 +65,7 @@ export default function MarketingPage() {
             { n: "04", title: "Scale what works", body: "We double down on what drives pipeline and cut what does not. Every rupee earns its place." },
           ].map((s) => (
             <div key={s.n} className="flex flex-col gap-3">
-              <span className="text-5xl font-black text-gray-100">{s.n}</span>
+              <span className="text-5xl font-black text-red-300">{s.n}</span>
               <h3 className="font-black text-lg">{s.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">{s.body}</p>
             </div>

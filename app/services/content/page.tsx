@@ -115,7 +115,7 @@ export default function ContentPage() {
             { n: "04", title: "Handoff & activation", body: "You receive a complete content playbook and briefing session. If you're moving into production with us, we start immediately." },
           ].map((step) => (
             <div key={step.n} className="flex flex-col gap-3">
-              <span className="text-5xl font-black text-gray-100">{step.n}</span>
+              <span className="text-5xl font-black text-red-300">{step.n}</span>
               <h3 className="font-black text-lg">{step.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">{step.body}</p>
             </div>
