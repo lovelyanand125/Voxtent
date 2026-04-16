@@ -165,29 +165,13 @@ export default function Header() {
                           href={item.href}
                           className={`rounded-xl p-4 transition ${dropdownItemHoverClass}`}
                         >
-                          <div className="flex items-start gap-3">
-                            <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-red-500">
-                              <svg
-                                className="h-4 w-4"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="1.8"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              >
-                                <circle cx="12" cy="12" r="3.5" />
-                              </svg>
-                            </div>
-
-                            <div>
-                              <p className={`text-[15px] font-semibold ${dropdownTitleClass}`}>
-                                {item.title}
-                              </p>
-                              <p className={`mt-1 text-sm leading-7 ${dropdownDescClass}`}>
-                                {item.desc}
-                              </p>
-                            </div>
+                          <div>
+                            <p className={`text-[15px] font-semibold ${dropdownTitleClass}`}>
+                              {item.title}
+                            </p>
+                            <p className={`mt-1 text-sm leading-7 ${dropdownDescClass}`}>
+                              {item.desc}
+                            </p>
                           </div>
                         </Link>
                       ))}
