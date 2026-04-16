@@ -64,7 +64,7 @@ return ( <main className="min-h-screen bg-[#FAF6F0]">
   <section className="relative text-white py-28 px-6 md:px-16 overflow-hidden">
 
     <img
-      src="/Image/c1.jpg"   // 🔥 replace later
+      src="/Image/c3.jpg"   // 🔥 replace later
       className="absolute inset-0 w-full h-full object-cover"
     />
 
