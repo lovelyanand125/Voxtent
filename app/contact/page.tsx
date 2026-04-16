@@ -78,7 +78,7 @@ export default function ContactPage() {
             Tell us about your idea - we’ll guide you forward.
           </motion.p>
 
-          <div className="mt-12 flex gap-3 flex-wrap text-sm">
+          <div className="mt-14 flex gap-3 flex-wrap text-sm">
             <span className="bg-red-500/20 text-red-100 border border-red-300/20 px-4 py-2 rounded-full backdrop-blur-sm">
               ⚡ 24h response
             </span>
