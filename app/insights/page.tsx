@@ -63,7 +63,7 @@ const articles = [
       "How to navigate the challenges of modern leadership and drive innovation in your organization through consistent content.",
     date: "Apr 10, 2026",
     readTime: "5 min read",
-    img: "/Image/hero3.jpg",   // 📁 add your JPG here
+    img: "/Image/i3.jpg",   // 📁 add your JPG here
     isVideo: false,
   },
   {

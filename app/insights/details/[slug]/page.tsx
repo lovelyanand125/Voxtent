@@ -146,7 +146,7 @@ const data: Record<string, Article> = {
     category: "STRATEGY",
     date: "Apr 6, 2026",
     readTime: "7 min read",
-    img: "/Image/hero1.jpg",
+    img: "/Image/i1.jpg",
     excerpt: "Key trends shaping how brands engage with audiences in a post-algorithm world.",
     author: "VoxTent Editorial",
     authorRole: "Strategy Team",
@@ -182,7 +182,7 @@ const data: Record<string, Article> = {
     category: "PODCAST",
     date: "Apr 4, 2026",
     readTime: "36 min listen",
-    img: "/Image/service3.jpg",
+    img: "/Image/i2.jpg",
     excerpt:
       "A deep dive into how India's top executives are using audio content to drive thought leadership.",
     author: "VoxTent Studio",

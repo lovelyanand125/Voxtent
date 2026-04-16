@@ -18,7 +18,7 @@ export default function StrategyPage() {
 
       {/* HERO */}
       <section className="relative h-[520px] overflow-hidden">
-        <img src="/Image/hero3.jpg" alt="Strategy" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = "/Image/s3.jpg"; }} />
+        <img src="/Image/p3.jpg" alt="Strategy" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = "/Image/p2.jpg"; }} />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
         <div className="absolute bottom-0 left-0 px-6 md:px-16 pb-12">
           <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-black text-lg mb-4" style={{ background: "#CC0000" }}>S</div>
@@ -88,7 +88,7 @@ export default function StrategyPage() {
 
       {/* FINAL CTA */}
       <section className="relative h-64 md:h-80 overflow-hidden">
-        <img src="/Image/Sample5.jpg" alt="CTA" className="w-full h-full object-cover opacity-40" />
+        <img src="/Image/p1.jpg" alt="CTA" className="w-full h-full object-cover opacity-40" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6" style={{ background: "rgba(11,26,43,0.85)" }}>
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Ready to build a strategy that actually drives growth?</h2>
           <p className="text-gray-300 mb-6">Tell us where you are and where you want to get to. We will tell you honestly how to get there.</p>
