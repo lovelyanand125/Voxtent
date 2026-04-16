@@ -28,6 +28,7 @@ const [status, setStatus] = useState<
 const handleSubmit = async (e: React.FormEvent) => {
 e.preventDefault();
 setStatus("sending");
+
 try {
   const res = await fetch("/api/contact", {
     method: "POST",
@@ -59,13 +60,21 @@ try {
 return ( <main className="min-h-screen bg-[#FAF6F0]">
 
 
-  {/* HERO */}
-  <section className="bg-[#0B1A2B] text-white py-24 px-6 md:px-16">
+  {/* HERO WITH IMAGE */}
+  <section className="relative text-white py-28 px-6 md:px-16 overflow-hidden">
+
+    <img
+      src="/Image/c1.jpg"   // 🔥 replace later
+      className="absolute inset-0 w-full h-full object-cover"
+    />
+
+    <div className="absolute inset-0 bg-[#0B1A2B]/80" />
+
     <motion.div
       initial="hidden"
       animate="visible"
       variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
-      className="max-w-3xl"
+      className="relative z-10 max-w-3xl"
     >
       <motion.p
         variants={fadeUp}
@@ -97,8 +106,17 @@ return ( <main className="min-h-screen bg-[#FAF6F0]">
   <section className="py-24 px-6 md:px-16">
     <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-20">
 
-      {/* LEFT INFO */}
+      {/* LEFT INFO + IMAGE */}
       <div className="md:col-span-2 space-y-10 text-sm">
+
+        {/* IMAGE BLOCK */}
+        <div className="rounded-xl overflow-hidden shadow">
+          <img
+            src="/Image/c2.jpg"   // 🔥 replace later
+            className="w-full h-56 object-cover"
+          />
+        </div>
+
         <div>
           <h3 className="text-xs uppercase tracking-widest text-red-500 mb-2 font-semibold">
             Studio & Office
