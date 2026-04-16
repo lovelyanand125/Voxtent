@@ -128,7 +128,7 @@ export default function InsightsPage() {
       {/* HERO */}
       <section className="relative overflow-hidden min-h-[560px] flex items-center px-6 md:px-16 py-24 text-white">
         <img
-          src="/Image/i2.jpg"
+          src="/Image/i3.jpg"
           alt="Voxtent insights background"
           className="absolute inset-0 h-full w-full object-cover"
         />
