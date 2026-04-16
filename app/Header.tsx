@@ -6,6 +6,11 @@ import { useEffect, useRef, useState } from "react";
 
 const servicesMenu = [
   {
+    title: "All Services",
+    href: "/services",
+    desc: "Explore all podcast, video, and content strategy services.",
+  },
+  {
     title: "Podcast Production",
     href: "/services/podcast",
     desc: "Build authority with a podcast that drives real business outcomes.",
@@ -157,8 +162,8 @@ export default function Header() {
                   onMouseLeave={() => setDesktopOpen(null)}
                 >
                   <div className="h-3 w-full" />
-                  <div className={`w-[560px] rounded-2xl p-5 ${dropdownPanelClass}`}>
-                    <div className="grid grid-cols-1 gap-3">
+                  <div className={`w-[620px] rounded-2xl p-5 ${dropdownPanelClass}`}>
+                    <div className="grid grid-cols-2 gap-3">
                       {servicesMenu.map((item) => (
                         <Link
                           key={item.href}
@@ -220,7 +225,7 @@ export default function Header() {
                   onMouseLeave={() => setDesktopOpen(null)}
                 >
                   <div className="h-3 w-full" />
-                  <div className={`w-[460px] rounded-2xl p-5 ${dropdownPanelClass}`}>
+                  <div className={`w-[430px] rounded-2xl p-5 ${dropdownPanelClass}`}>
                     <div className="grid grid-cols-1 gap-2">
                       {insightsMenu.map((item) => (
                         <Link
