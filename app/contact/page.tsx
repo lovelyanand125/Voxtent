@@ -60,7 +60,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/75" />
         <div className="absolute inset-0 bg-[#0b1a2b]/25" />
 
-        <div className="relative z-10 max-w-4xl">
+        <div className="relative z-10 max-w-4xl pt-10 md:pt-16">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
