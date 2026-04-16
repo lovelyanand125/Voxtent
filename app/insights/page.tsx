@@ -146,10 +146,13 @@ export default function InsightsPage() {
     <main className="bg-[#FAF6F0] text-black min-h-screen">
 
       {/* ── HERO ── */}
-      <section
-        className="text-white py-24 px-6 md:px-16 relative overflow-hidden"
-        style={{ background: "#0B1A2B" }}
-      >
+     <section className="text-white py-24 px-6 md:px-16 relative overflow-hidden">
+  <img
+    src="/Image/i2.jpg"
+    alt="Insights"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+  <div className="absolute inset-0" style={{ background: "rgba(11,26,43,0.85)" }} />
         <div className="absolute right-0 top-0 w-1/2 h-full opacity-5 pointer-events-none select-none flex items-center justify-end pr-16">
           <span className="text-[220px] font-bold tracking-tighter">I</span>
         </div>
