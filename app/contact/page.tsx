@@ -118,7 +118,7 @@ export default function ContactPage() {
                 <p className="text-red-500 text-xs uppercase tracking-[0.18em] font-semibold">
                   Phone
                 </p>
-                <p className="text-black">+91 96637 99617</p>
+                <p className="text-black">+91 7996800517</p>
               </div>
 
               <div>
