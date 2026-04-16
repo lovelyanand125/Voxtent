@@ -81,7 +81,6 @@ return ( <main className="min-h-screen bg-[#FAF6F0] flex flex-col">
         Tell us about your idea — we’ll guide you forward.
       </motion.p>
 
-      {/* TRUST */}
       <div className="mt-6 flex gap-3 flex-wrap text-sm">
         <span className="bg-white/10 px-4 py-2 rounded-full">⚡ 24h response</span>
         <span className="bg-white/10 px-4 py-2 rounded-full">🎯 Strategy-first</span>
@@ -94,7 +93,7 @@ return ( <main className="min-h-screen bg-[#FAF6F0] flex flex-col">
   <section className="py-24 px-6 md:px-16 flex-1">
     <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-20">
 
-      {/* LEFT SIDE */}
+      {/* LEFT */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
         animate={{ opacity: 1, x: 0 }}
@@ -102,7 +101,7 @@ return ( <main className="min-h-screen bg-[#FAF6F0] flex flex-col">
       >
         <img
           src="/Image/c2.jpg"
-          className="rounded-xl shadow w-full h-56 object-cover"
+          className="rounded-xl shadow w-full h-64 object-cover"
         />
 
         <div className="text-sm space-y-5">
@@ -122,47 +121,12 @@ return ( <main className="min-h-screen bg-[#FAF6F0] flex flex-col">
           </div>
         </div>
 
-        {/* REQUEST CALL (UPGRADED) */}
-        <div className="bg-white p-6 rounded-xl shadow border border-gray-100">
-          <h3 className="font-semibold text-lg mb-2">Request a Call</h3>
-          <p className="text-sm text-gray-500 mb-4">
-            Quick chat. No forms. We’ll call you back.
-          </p>
-
-          <form
-            onSubmit={async (e) => {
-              e.preventDefault();
-
-              const formData = new FormData(e.currentTarget);
-              const data = {
-                name: formData.get("name"),
-                mobile: formData.get("mobile"),
-                email: formData.get("email"),
-                time: formData.get("time"),
-                type: "call_request",
-              };
-
-              await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
-              });
-
-              alert("We'll call you shortly!");
-            }}
-            className="space-y-3"
-          >
-            <input name="name" required placeholder="Name" className="border p-2 w-full rounded" />
-            <input name="mobile" required placeholder="Mobile Number" className="border p-2 w-full rounded" />
-            <input name="email" placeholder="Email (optional)" className="border p-2 w-full rounded" />
-            <input name="time" placeholder="Preferred Time" className="border p-2 w-full rounded" />
-
-            <button className="bg-black text-white w-full py-2 rounded hover:scale-[1.02] transition">
-              Request Call
-            </button>
-          </form>
+        {/* EXTRA TRUST */}
+        <div className="text-sm text-gray-600">
+          <p>✔ We respond within 24 hours</p>
+          <p>✔ No spam, no sales pressure</p>
+          <p>✔ Clear next steps guaranteed</p>
         </div>
-
       </motion.div>
 
       {/* FORM */}
@@ -241,7 +205,7 @@ return ( <main className="min-h-screen bg-[#FAF6F0] flex flex-col">
     </div>
   </section>
 
-  {/* TESTIMONIAL (UPGRADED) */}
+  {/* TESTIMONIAL */}
   <section className="px-6 md:px-16 pb-20 text-center">
     <div className="max-w-3xl mx-auto">
       <p className="italic text-gray-700 text-lg">
