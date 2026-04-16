@@ -48,7 +48,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[#FAF6F0] flex flex-col">
       {/* HERO */}
-      <section className="relative py-28 px-6 md:px-16 text-white overflow-hidden">
+      <section className="relative min-h-[560px] py-28 px-6 md:px-16 text-white overflow-hidden">
         <motion.img
           src="/Image/c2.jpg"
           className="absolute inset-0 w-full h-full object-cover"
@@ -95,7 +95,6 @@ export default function ContactPage() {
       {/* MAIN */}
       <section className="py-24 px-6 md:px-16 flex-1">
         <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-20">
-          {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -136,7 +135,6 @@ export default function ContactPage() {
             </div>
           </motion.div>
 
-          {/* FORM */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -201,8 +199,8 @@ export default function ContactPage() {
                 />
 
                 <p className="text-sm text-gray-500">
-                  👉 We review every request personally. Expect a response within 24
-                  hours.
+                  👉 We review every request personally. Expect a response within
+                  24 hours.
                 </p>
 
                 <button className="bg-red-600 text-white py-3 rounded-lg w-full hover:bg-red-700 transition hover:scale-[1.02] font-semibold">
