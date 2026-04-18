@@ -218,17 +218,17 @@ export default function PodcastPage() {
               viewport={{ once: true }}
               className="mt-8 rounded-2xl border border-black/10 bg-[#F4EEE8] px-6 py-7 md:px-8"
             >
-              <p className="max-w-none text-[15px] leading-8 text-gray-700 md:text-base">
-                584 million people worldwide now listen to podcasts. 75% of B2B
-                decision-makers are already tuning in, half of them daily. 91% of
-                marketers are increasing their podcast investments this year.
-                Companies with branded podcasts see 89% higher brand awareness
-                than those without. In India, this market is growing at 28%
-                year-on-year. The RBI launched a podcast. Tata Steel launched a
-                podcast. Durex launched a podcast. The question isn&apos;t whether
-                your business should have one. It&apos;s whether you can afford to
-                be the only one without.
-              </p>
+<p className="max-w-none text-[15px] md:text-base text-gray-700 leading-7">
+  584 million people worldwide now listen to podcasts. 75% of B2B decision-makers are already tuning in, and half of them do so daily. 91% of marketers are increasing their podcast investments this year, while branded podcasts continue to drive stronger brand awareness than those without.
+
+  <br /><br />
+
+  In India, the market is growing at 28% year-on-year. The RBI launched a podcast. Tata Steel launched a podcast. Durex launched a podcast.
+
+  <br /><br />
+
+  The question is not whether your business should have one. It is whether you can afford to be the only one without.
+</p>
             </motion.div>
           </div>
         </AnimatedSection>
