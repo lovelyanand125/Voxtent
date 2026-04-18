@@ -334,76 +334,102 @@ The question isn't whether your business should have one. It's whether you can a
         </AnimatedSection>
       </section>
 
-      {/* HOW IT WORKS */}
+ 
+      {/* HOW IT WORKS + FAQ */}
       <section className="bg-[#FAF6F0] py-20 px-6 md:px-16">
         <AnimatedSection>
-          <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl font-bold mb-12">
-            How it works.
-          </motion.h2>
-          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="space-y-6">
-            {steps.map((item, i) => (
-              <motion.div
-                key={i}
-                variants={fadeUp}
-                whileHover={{ x: 8, boxShadow: "0 8px 24px rgba(0,0,0,0.08)" }}
-                className="flex gap-6 bg-white p-6 rounded-xl border border-gray-100 cursor-default"
-              >
-                <span className="text-red-500 font-bold text-2xl w-10 flex-shrink-0">{item.step}</span>
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
-                  <p className="text-gray-600 text-sm">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </AnimatedSection>
-      </section>
-
-      {/* FAQ */}
-      <section className="bg-white py-20 px-6 md:px-16">
-        <AnimatedSection>
-          <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl font-bold mb-12">
-            Common questions.
-          </motion.h2>
-          <div className="max-w-3xl space-y-3">
-            {faqs.map((item, i) => (
-              <motion.div
-                key={i}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* LEFT — HOW IT WORKS */}
+            <div>
+              <motion.h2
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="border border-gray-100 rounded-xl overflow-hidden"
+                className="text-3xl font-bold mb-10"
               >
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex justify-between items-center p-5 text-left hover:bg-gray-50 transition"
-                >
-                  <span className="font-semibold">{item.q}</span>
-                  <motion.span
-                    animate={{ rotate: openFaq === i ? 45 : 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="text-red-500 text-2xl font-light flex-shrink-0 ml-4"
-                  >
-                    +
-                  </motion.span>
-                </button>
-                {openFaq === i && (
+                How it works.
+              </motion.h2>
+
+              <motion.div
+                variants={stagger}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="space-y-5"
+              >
+                {steps.map((item, i) => (
                   <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    transition={{ duration: 0.25 }}
-                    className="px-5 pb-5 text-gray-600 text-sm"
+                    key={i}
+                    variants={fadeUp}
+                    whileHover={{ x: 8, boxShadow: "0 8px 24px rgba(0,0,0,0.08)" }}
+                    className="flex gap-5 bg-white p-5 rounded-xl border border-gray-100 cursor-default"
                   >
-                    {item.a}
+                    <span className="text-red-500 font-bold text-2xl w-10 flex-shrink-0">
+                      {item.step}
+                    </span>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
+                      <p className="text-gray-600 text-sm leading-6">{item.desc}</p>
+                    </div>
                   </motion.div>
-                )}
+                ))}
               </motion.div>
-            ))}
+            </div>
+
+            {/* RIGHT — COMMON QUESTIONS */}
+            <div>
+              <motion.h2
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="text-3xl font-bold mb-10"
+              >
+                Common questions.
+              </motion.h2>
+
+              <div className="space-y-3">
+                {faqs.map((item, i) => (
+                  <motion.div
+                    key={i}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="border border-gray-100 rounded-xl overflow-hidden bg-white"
+                  >
+                    <button
+                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                      className="w-full flex justify-between items-center p-5 text-left hover:bg-gray-50 transition"
+                    >
+                      <span className="font-semibold">{item.q}</span>
+                      <motion.span
+                        animate={{ rotate: openFaq === i ? 45 : 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="text-red-500 text-2xl font-light flex-shrink-0 ml-4"
+                      >
+                        +
+                      </motion.span>
+                    </button>
+
+                    {openFaq === i && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        transition={{ duration: 0.25 }}
+                        className="px-5 pb-5 text-gray-600 text-sm leading-6"
+                      >
+                        {item.a}
+                      </motion.div>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </AnimatedSection>
       </section>
-
       {/* FINAL CTA */}
       <section className="relative bg-red-600 text-white py-24 px-6 md:px-16 overflow-hidden">
         <img src="/Image/p5.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity" />
