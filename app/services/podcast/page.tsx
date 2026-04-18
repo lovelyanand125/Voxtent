@@ -97,7 +97,7 @@ export default function PodcastPage() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-red-400 uppercase tracking-widest text-sm mb-4"
           >
-            Podcast Production
+            The opportunity is open. Most businesses haven't walked through it yet.
           </motion.p>
 
           <motion.h1
@@ -106,8 +106,8 @@ export default function PodcastPage() {
             transition={{ delay: 0.35, duration: 0.7 }}
             className="text-5xl md:text-6xl font-bold leading-tight"
           >
-            Your show. <br />
-            <span className="text-red-400">Built to mean business.</span>
+            Your audience is already listening. <br />
+            <span className="text-red-400">Just not to you.</span>
           </motion.h1>
 
           <motion.p
@@ -116,7 +116,7 @@ export default function PodcastPage() {
             transition={{ delay: 0.55, duration: 0.6 }}
             className="mt-6 text-gray-300 text-lg max-w-2xl"
           >
-            We take founders, CXOs, and business leaders from zero to a fully produced, distributed, and growing podcast — without the guesswork.
+            India now has over 200 million podcast listeners. The businesses and leaders who start building their voice today will own the conversation tomorrow.
           </motion.p>
 
           <motion.button
@@ -128,21 +128,185 @@ export default function PodcastPage() {
             onClick={() => setOpen(true)}
             className="mt-8 bg-red-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-600 transition"
           >
-            Start your podcast →
+            Let's build yours→
           </motion.button>
         </div>
       </section>
-
-      {/* WHY PODCAST */}
-      <section className="bg-red-600 text-white py-16 px-6 md:px-16">
+      {/* S2 — THE NUMBERS */}
+      <section className="bg-white py-20 px-6 md:px-16">
         <AnimatedSection>
-          <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-2xl md:text-3xl font-bold max-w-4xl">
-            A podcast isn't a content play. <br className="hidden md:block" />
-            It's a business development engine in disguise.
-          </motion.h2>
-          <motion.p variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mt-4 text-white/80 max-w-2xl">
-            The most trusted voices in any sector have a show. Your competitors don't yet. That window won't stay open.
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-xs font-semibold uppercase tracking-[0.22em] text-gray-400"
+          >
           </motion.p>
+
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-red-500"
+          >
+            Why now
+          </motion.p>
+
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-3 text-3xl md:text-4xl font-bold max-w-4xl leading-tight"
+          >
+            Podcasting in India is not a trend. It’s a shift.
+          </motion.h2>
+
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4"
+          >
+            <motion.div
+              variants={fadeUp}
+              className="rounded-xl border border-gray-200 bg-[#FAF6F0] px-5 py-6"
+            >
+              <p className="text-3xl md:text-4xl font-bold text-black">200M+</p>
+              <p className="mt-3 text-sm text-gray-600 leading-6">
+                Podcast listeners in India in 2025, up from 100M a year ago.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              className="rounded-xl border border-gray-200 bg-[#FAF6F0] px-5 py-6"
+            >
+              <p className="text-3xl md:text-4xl font-bold text-black">28%</p>
+              <p className="mt-3 text-sm text-gray-600 leading-6">
+                Year-on-year growth rate, one of the fastest in the world.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              className="rounded-xl border border-gray-200 bg-[#FAF6F0] px-5 py-6"
+            >
+              <p className="text-3xl md:text-4xl font-bold text-black">#3</p>
+              <p className="mt-3 text-sm text-gray-600 leading-6">
+                India is the third largest podcast market globally.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              className="rounded-xl border border-gray-200 bg-[#FAF6F0] px-5 py-6"
+            >
+              <p className="text-3xl md:text-4xl font-bold text-black">$4.2Bn</p>
+              <p className="mt-3 text-sm text-gray-600 leading-6">
+                Projected value of India’s podcast market by 2033.
+              </p>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-10 max-w-5xl rounded-xl border border-gray-200 bg-[#FAF6F0] px-6 py-6"
+          >
+            <p className="text-sm md:text-[15px] text-gray-700 leading-7">
+584 million people worldwide now listen to podcasts. 75% of B2B decision-makers are already tuning in half of them daily. 91% of marketers are increasing their podcast investments this year. Companies with branded podcasts see 89% higher brand awareness than those without.
+In India, this market is growing at 28% year-on-year. The RBI launched a podcast. Tata Steel launched a podcast. Durex launched a podcast.
+The question isn't whether your business should have one. It's whether you can afford to be the only one without."
+            </p>
+          </motion.div>
+        </AnimatedSection>
+      </section>
+
+            {/* S3 — WHY PODCASTING WORKS FOR BUSINESS */}
+      <section className="bg-[#FAF6F0] py-20 px-6 md:px-16">
+        <AnimatedSection>
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-xs font-semibold uppercase tracking-[0.22em] text-gray-400"
+          >
+            Why podcasting works for business
+          </motion.p>
+
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-red-500"
+          >
+            The business case
+          </motion.p>
+
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-3 text-3xl md:text-4xl font-bold max-w-4xl leading-tight text-black"
+          >
+            No other format does what a podcast does.
+          </motion.h2>
+
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-10 max-w-5xl space-y-8"
+          >
+            <motion.div
+              variants={fadeUp}
+              className="border-b border-black/10 pb-6"
+            >
+              <h3 className="text-xl md:text-2xl font-bold leading-snug text-black">
+                It is the most authentic way to connect.
+              </h3>
+              <p className="mt-3 text-gray-700 leading-7">
+                You are talking directly to your audience — no algorithm filtering,
+                no 30-second window. A podcast listener gives you 30-45 minutes of
+                undivided attention. No other medium offers that.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              className="border-b border-black/10 pb-6"
+            >
+              <h3 className="text-xl md:text-2xl font-bold leading-snug text-black">
+                It builds thought leadership that compounds.
+              </h3>
+              <p className="mt-3 text-gray-700 leading-7">
+                Every episode adds to your authority. Every guest adds credibility.
+                Every platform adds reach. A podcast is not a campaign — it is an
+                asset that grows over time.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeUp}>
+              <h3 className="text-xl md:text-2xl font-bold leading-snug text-black">
+                It is a 360° content engine.
+              </h3>
+              <p className="mt-3 text-gray-700 leading-7">
+                One well-produced series gives you months of content — clips for
+                social, quotes for LinkedIn, scripts for newsletters, material for
+                PR. You create once and distribute everywhere.
+              </p>
+            </motion.div>
+          </motion.div>
         </AnimatedSection>
       </section>
 
@@ -150,7 +314,6 @@ export default function PodcastPage() {
       <section className="bg-white py-20 px-6 md:px-16">
         <AnimatedSection>
           <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl font-bold mb-4">
-            Everything included. Nothing left to figure out.
           </motion.h2>
           <motion.p variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-gray-500 mb-12">
             One engagement covers strategy to distribution — and everything in between.
@@ -243,7 +406,7 @@ export default function PodcastPage() {
 
       {/* FINAL CTA */}
       <section className="relative bg-red-600 text-white py-24 px-6 md:px-16 overflow-hidden">
-        <img src="/Image/Sample5.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity" />
+        <img src="/Image/p5.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity" />
         <div className="relative z-10">
           <AnimatedSection>
             <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-5xl font-bold max-w-3xl">
