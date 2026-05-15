@@ -350,6 +350,7 @@ export default function Page() {
   <span className="text-gray-700">·</span>
   <span>{article.readTime}</span>
 </div>
+        </div>
       </section>
 
       {/* ── HERO IMAGE ── */}
