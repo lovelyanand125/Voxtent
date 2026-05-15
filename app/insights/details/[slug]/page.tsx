@@ -17,8 +17,6 @@ type Article = {
   excerpt: string;
   sections: { heading: string; body: string }[];
   keyTakeaways: string[];
-  author: string;
-  authorRole: string;
 };
 
 const data: Record<string, Article> = {
@@ -30,8 +28,6 @@ const data: Record<string, Article> = {
     img: "/Image/image1.png",
     excerpt:
       "The window for first-mover advantage in B2B audio is closing faster than anyone expected. Here's what the data says — and what to do about it.",
-    author: "Kanishk Indrarun",
-    authorRole: "Founder, VoxTent",
     sections: [
       {
         heading: "The Attention Shift Is Real",
