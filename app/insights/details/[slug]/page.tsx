@@ -107,8 +107,6 @@ const data: Record<string, Article> = {
     img: null,
     excerpt:
       "Strategies to foster engagement and trust with your audience across LinkedIn, podcasts, and beyond.",
-    author: "VoxTent Editorial",
-    authorRole: "Content Studio",
     sections: [
       {
         heading: "The Algorithm Giveth and Taketh Away",
@@ -143,8 +141,6 @@ const data: Record<string, Article> = {
     readTime: "7 min read",
     img: "/Image/i1.jpg",
     excerpt: "Key trends shaping how brands engage with audiences in a post-algorithm world.",
-    author: "VoxTent Editorial",
-    authorRole: "Strategy Team",
     sections: [
       {
         heading: "The Post-Algorithm Era",
@@ -180,8 +176,6 @@ const data: Record<string, Article> = {
     img: "/Image/i2.jpg",
     excerpt:
       "A deep dive into how India's top executives are using audio content to drive thought leadership.",
-    author: "VoxTent Studio",
-    authorRole: "Podcast Production",
     sections: [
       {
         heading: "Episode Overview",
@@ -217,8 +211,7 @@ const data: Record<string, Article> = {
     img: null,
     excerpt:
       "One podcast episode can generate 30+ assets. Here's the exact workflow we use at Voxtent.",
-    author: "VoxTent Studio",
-    authorRole: "Content Team",
+
     sections: [
       {
         heading: "The Asset Multiplier Model",
@@ -254,8 +247,7 @@ const data: Record<string, Article> = {
     img: null,
     excerpt:
       "We analysed 200 founder profiles. Here's the content pattern that consistently drives inbound leads.",
-    author: "VoxTent Editorial",
-    authorRole: "Growth Team",
+
     sections: [
       {
         heading: "The Analysis",
@@ -353,22 +345,11 @@ export default function Page() {
             {article.excerpt}
           </p>
 
-          <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
-                {article.author.charAt(0)}
-              </div>
-              <div>
-                <p className="text-white text-sm font-semibold leading-none">{article.author}</p>
-                <p className="text-gray-500 text-xs mt-0.5">{article.authorRole}</p>
-              </div>
-            </div>
-            <span className="text-gray-700">·</span>
-            <span>{article.date}</span>
-            <span className="text-gray-700">·</span>
-            <span>{article.readTime}</span>
-          </div>
-        </div>
+<div className="flex items-center gap-4 text-sm text-gray-500">
+  <span>{article.date}</span>
+  <span className="text-gray-700">·</span>
+  <span>{article.readTime}</span>
+</div>
       </section>
 
       {/* ── HERO IMAGE ── */}
