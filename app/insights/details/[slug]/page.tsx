@@ -67,8 +67,7 @@ const data: Record<string, Article> = {
     img: null,
     excerpt:
       "How to navigate the challenges of modern leadership and drive innovation in your organization through consistent content.",
-    author: "VoxTent Editorial",
-    authorRole: "Content Studio",
+
     sections: [
       {
         heading: "Authority Has a New Address",
