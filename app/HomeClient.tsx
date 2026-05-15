@@ -24,7 +24,7 @@ export default function HomeClient() {
 
           {/* HERO SECTION */}
           <section className="relative h-screen flex items-center text-white overflow-hidden">
-            <img src="//Image/home1.jpg" className="absolute w-full h-full object-cover" />
+            <img src="/Image/home1.jpg" className="absolute w-full h-full object-cover" />
             <div className="absolute inset-0 bg-black/60" />
             <div className="relative z-10 px-6 md:px-16 max-w-4xl pt-20">
               <h1 className="text-4xl md:text-7xl font-bold leading-tight">
